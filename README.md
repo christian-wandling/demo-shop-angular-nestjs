@@ -1,37 +1,37 @@
-# Demo shop public
+# Demo Shop - Angular / NestJS
 
-This repository contains an Angular frontend and NestJS api for the Demo Shop platform, a full-stack e-commerce application built for educational purposes using modern web technologies.
+This repository contains an Angular frontend and NestJS API for the Demo Shop platform, a full-stack e-commerce reference implementation built with modern web technologies.
 
-## Overview
+## Platform
 
-The Demo Shop platform is maintained over multiple separate repositories supporting interchangeable implementations.
+The Demo Shop platform is split across interchangeable implementations:
 
-1. [demo-shop-react-ui](http://github.com/christian-wandling/demo-shop-react-ui): React implementation of the frontend
-2. [demo-shop-dotnet-api](http://github.com/christian-wandling/demo-shop-dotnet-api): ASP.NET Core implementation of the API
-3. [demo-shop-e2e](http://github.com/christian-wandling/demo-shop-e2e): E2E Testing with playwright
+**Angular + NestJS** · [.NET API](https://github.com/christian-wandling/demo-shop-dotnet-api) · [React UI](https://github.com/christian-wandling/demo-shop-react-ui) · [E2E](https://github.com/christian-wandling/demo-shop-e2e)
+
+## Documentation
 
 ### Backend
 
-- <a href="https://christian-wandling.github.io/demo-shop-public/compodoc/backend" target="_blank">API Documentation</a> - Complete API reference and backend architecture
+- <a href="https://christian-wandling.github.io/demo-shop-angular-nestjs/compodoc/backend" target="_blank">API Documentation</a> - Complete API reference and backend architecture
 
 ### Frontend
 
-- <a href="https://christian-wandling.github.io/demo-shop-public/compodoc/frontend" target="_blank">Frontend Documentation</a> - Component structure and frontend architecture
+- <a href="https://christian-wandling.github.io/demo-shop-angular-nestjs/compodoc/frontend" target="_blank">Frontend Documentation</a> - Component structure and frontend architecture
 - <a href="https://67e3398bb6689fcab1248c6a-ktupstjvwo.chromatic.com" target="_blank">Storybook</a> - Interactive UI component library and visual testing
-- <a href="https://67fdf0c9a95dbf7d8993b651-caleyrhptc.chromatic.com/" target="\_blank">Playwright</a> - Interactive E2E test reults
-- <a href="https://christian-wandling.github.io/demo-shop-public/graph/frontend/#/projects/frontend">Dependency Graph</a> - Dependency graph of the frontend apps and libs
+- <a href="https://67fdf0c9a95dbf7d8993b651-caleyrhptc.chromatic.com/" target="_blank">Playwright</a> - Interactive E2E test results
+- <a href="https://christian-wandling.github.io/demo-shop-angular-nestjs/graph/frontend/#/projects/frontend">Dependency Graph</a> - Dependency graph of the frontend apps and libs
 
 #### Libraries
 
-- [Authentication](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/auth/README.md) - User authentication and authorization flows
-- [User](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/user/README.md) - User management
-- [Products](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/product/README.md) - Product catalog, categories, and search functionality
-- [Shopping](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/cart/README.md) - Shopping cart implementation and session management
-- [Order](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/order/README.md) - Order processing, history, and management
-- [Monitoring](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/monitoring/README.md) - Application performance monitoring and logging
-- [Navigation](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/navigation/README.md) - Site navigation components and routing
-- [Shared](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/shared/README.md) - Common utilities and shared components
-- [OpenApiGenerator](https://github.com/christian-wandling/demo-shop-public/tree/main/libs/api/README.md) - API client generation tools and configurations
+- [Authentication](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/auth/README.md) - User authentication and authorization flows
+- [User](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/user/README.md) - User management
+- [Products](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/product/README.md) - Product catalog, categories, and search functionality
+- [Shopping](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/cart/README.md) - Shopping cart implementation and session management
+- [Order](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/order/README.md) - Order processing, history, and management
+- [Monitoring](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/monitoring/README.md) - Application performance monitoring and logging
+- [Navigation](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/navigation/README.md) - Site navigation components and routing
+- [Shared](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/shared/README.md) - Common utilities and shared components
+- [OpenApiGenerator](https://github.com/christian-wandling/demo-shop-angular-nestjs/tree/main/libs/api/README.md) - API client generation tools and configurations
 
 ## Tech Stack
 
@@ -40,7 +40,7 @@ The Demo Shop platform is maintained over multiple separate repositories support
 - **Angular** - Progressive web framework
 - **TypeScript** - Type-safe JavaScript
 - **NgRx** - State Management
-- **HTML2Canvas/jsPDF** - Pdf generation
+- **HTML2Canvas/jsPDF** - PDF generation
 - **Tailwind CSS** - Styling
 
 ### Backend
@@ -57,44 +57,44 @@ The Demo Shop platform is maintained over multiple separate repositories support
 ### Testing & Documentation
 
 - **Jest** - Unit testing
-- **Storybook** - Ui component documentation & testing
+- **Storybook** - UI component documentation & testing
 - **Compodoc** - Automated documentation generation
 - **Playwright** - E2E testing
 
 ### Monitoring & Code Quality
 
 - **Sentry** - Error monitoring
-- **Sonarcloud** - Static analysis & quality gate
+- **SonarCloud** - Static analysis & quality gate
 
 ### Dev workflow
 
 - **Commitlint/Commitizen** - Standardize commit messages
 - **Husky** - Pre-commit hooks
 - **ESLint/Lint-staged** - Automated linting
-- **Prettier** - Automated code formating
+- **Prettier** - Automated code formatting
 
 ### DevOps & Infrastructure
 
 - **Nx** - Mono-repo build system
 - **Docker** - Containerization
 - **Terraform** - Infrastructure as Code
-- **Github CI/CD** - Continuous Integration/Continuous Deployment
+- **GitHub CI/CD** - Continuous Integration/Continuous Deployment
 - **AWS** - Cloud hosting platform
 
 ## Setup
 
 ### Prerequisites
 
-- <a href="https://nodejs.org/en" target="\_blank">Node.js 20</a> or later
-- <a href="https://www.npmjs.com/" target="\_blank">npm</a> or <a href="https://yarnpkg.com/" target="\_blank">yarn</a>
-- <a href="https://www.docker.com/" target="\_blank">Docker</a>
+- <a href="https://nodejs.org/en" target="_blank">Node.js 20</a> or later
+- <a href="https://www.npmjs.com/" target="_blank">npm</a> or <a href="https://yarnpkg.com/" target="_blank">yarn</a>
+- <a href="https://www.docker.com/" target="_blank">Docker</a>
 
 ### Installation
 
 1. Clone the repository
 
 ```
-git clone https://github.com/christian-wandling/demo-shop-public.git
+git clone https://github.com/christian-wandling/demo-shop-angular-nestjs.git
 ```
 
 2. Install dependencies
@@ -174,13 +174,22 @@ http://localhost:4200
 npx @sentry/wizard@latest -i sourcemaps --saas
 ```
 
-### Dotnet APi Integration
+### Dotnet API Integration
 
-An equivalent API created with ASP.Net Core is available in the following repository:
+An equivalent API created with ASP.NET Core is available in the following repository:
 
-> <a href="http://github.com/christian-wandling/demo-shop-dotnet-api" target="_blank">http://github.com/christian-wandling/demo-shop-dotnet-api</a>
+> <a href="https://github.com/christian-wandling/demo-shop-dotnet-api" target="_blank">github.com/christian-wandling/demo-shop-dotnet-api</a>
 
 To use the API with this frontend, ensure both applications are running and connected via the shared Docker network.
+
+### React UI Integration
+
+An equivalent frontend built with React is available in the following repository:
+
+> <a href="https://github.com/christian-wandling/demo-shop-react-ui" target="_blank">github.com/christian-wandling/demo-shop-react-ui</a>
+
+To use the React frontend with this API, ensure both applications are running and connected via the shared Docker network.
+
 
 ## User management
 
@@ -202,7 +211,7 @@ http://localhost:4200
 http://localhost:8080/admin/master/console/#/demo_shop/users/add-user
 ```
 
-2. To login use `KEYCLOAK_ADMIN` and `KEYCLOAK_ADMIN_PASSWORD` defined in your [.env](.env) file.
+2. To login use `KEYCLOAK_ADMIN` and `KEYCLOAK_ADMIN_PASSWORD` defined in your [.env](.env.example) file.
 
 3. Fill `Email`, `First Name` and `Last name`
 
@@ -266,7 +275,7 @@ nx test <name>
 
 ## Deployment
 
-This repository includes a comprehensive CI/CD pipeline for deploying a fullstack application to AWS with Cloudflare for DNS management and CDN services.
+This repository includes a CI/CD pipeline for deploying a full-stack application to AWS with Cloudflare for DNS management and CDN services.
 
 ### Continuous Integration
 
@@ -297,7 +306,7 @@ This repository includes a comprehensive CI/CD pipeline for deploying a fullstac
 
 ### Prerequisites
 
-- Github Setup
+- GitHub Setup
 
   - GitHub repository access with proper permissions
   - GitHub Actions secrets configured for AWS, Cloudflare, and Sentry credentials
