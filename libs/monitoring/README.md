@@ -10,7 +10,7 @@ A lightweight library for handling different aspects of application monitoring, 
 
 ## API Reference
 
-For a complete API reference, see the [Compodoc documentation](https://christian-wandling.github.io/demo-shop-public/compodoc/frontend).
+For a complete API reference, see the [Compodoc documentation](https://christian-wandling.github.io/demo-shop-angular-nestjs/compodoc/frontend).
 
 ## Test
 
