@@ -111,13 +111,8 @@ cp .env.example .env
 ```
 
 - You can choose to omit configuring sentry or see the section on setting up [sentry](#sentry-setup)
-- `KEYCLOAK_REALM_PUBLIC_KEY` is needed by the api to validate tokens. It is dynamically created on keycloak server creation.
-  - To retrieve it, follow the installation steps to build & run the docker containers
-  - Next access the keycloak server.
-  ```
-  http://localhost:8080/admin/master/console/#/demo_shop/realm-settings/keys
-  ```
-  - Click on the Public Key of RS256 and use its value in your .env file
+- `KEYCLOAK_REALM_PUBLIC_KEY` is filled in at step 7, once keycloak has generated it. Leave the placeholder for now.
+- `API_PORT`, `FRONTEND_PORT`, `KEYCLOAK_PORT`, `DB_PORT` and `PGADMIN_PORT` set the host ports. Change one if another project already uses it. Changing `KEYCLOAK_PORT` also requires updating the keycloak url in `apps/frontend/src/environments/environment.ts`.
 
 4. Create shared docker network (or remove network from compose file)
 
@@ -125,23 +120,32 @@ cp .env.example .env
 docker network create shared
 ```
 
-5. Generate prisma client
-
-```
-npm run prisma:generate
-```
-
-6. Push the prisma schema to database
-
-```
-npm run prisma:push
-```
-
-7. Build & Run the docker containers
+5. Build & run the docker containers
 
 ```
 # this will build and run docker containers for frontend, api, postgres, keycloak, pgadmin
 npm start
+```
+
+6. Generate prisma client and push the schema to the database
+
+```
+npm run prisma:generate
+npm run prisma:push
+```
+
+7. Give the api keycloak's public key
+
+Access the keycloak server, click on the Public Key of RS256, and use its value in your `.env` file as `KEYCLOAK_REALM_PUBLIC_KEY`.
+
+```
+http://localhost:8080/admin/master/console/#/demo_shop/realm-settings/keys
+```
+
+Then restart the api.
+
+```
+docker compose restart api
 ```
 
 8. Access the application
