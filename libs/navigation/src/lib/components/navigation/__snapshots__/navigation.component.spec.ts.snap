@@ -8,6 +8,7 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
   
   <header
     class="relative bg-white"
+    data-testid="navigation-bar"
   >
     <nav
       aria-label="Top"
@@ -21,6 +22,7 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
         >
           <button
             class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
+            data-testid="navigation-slide-over-toggle"
             type="button"
           >
             <span
@@ -48,6 +50,7 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
           </button>
           <div
             class="ml-4 flex lg:ml-0 h-8 w-8 relative"
+            data-testid="navigation-bar-logo"
           >
             <a
               href="/"
@@ -80,6 +83,7 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
             >
               <div
                 class="menu-item flex h-full space-x-8"
+                data-testid="navigation-bar-item-Route1"
               >
                 <a
                   class="menu-item-button flex items-center text-sm font-medium text-gray-700 hover:text-indigo-500"
@@ -90,6 +94,7 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
               </div>
               <div
                 class="menu-item flex h-full space-x-8"
+                data-testid="navigation-bar-item-Route2"
               >
                 <a
                   class="menu-item-button flex items-center text-sm font-medium text-gray-700 hover:text-indigo-500"
@@ -106,6 +111,7 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
           >
             <lib-user-navigation
               class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+              data-testid="navigation-bar-user-section"
             />
             <lib-product-search />
             <lib-cart-icon />
@@ -129,16 +135,19 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
     <div
       aria-hidden="true"
       class="fixed inset-0 bg-black bg-opacity-25"
+      data-testid="navigation-slide-over-backdrop"
     />
   </dialog>
   <div
     class="absolute h-screen z-40 flex w-full max-w-xs flex-col overflow-y-auto bg-white px-6 p-2 shadow-xl ng-trigger ng-trigger-animateSlideOver ng-animating"
+    data-testid="navigation-slide-over"
   >
     <div
       class="sticky z-20 top-0 flex px-4 pb-2 pt-5"
     >
       <button
         class="relative opacity-90 -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-white"
+        data-testid="navigation-slide-over-close-button"
         type="button"
       >
         <span
@@ -174,6 +183,7 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
       >
         <a
           class="-m-2 block p-2 font-medium text-gray-700 hover:text-indigo-500 text-xl"
+          data-testid="navigation-slide-over-item-Route1"
           href="/route1"
         >
            Route1 
@@ -185,6 +195,7 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
       >
         <a
           class="-m-2 block p-2 font-medium text-gray-700 hover:text-indigo-500 text-xl"
+          data-testid="navigation-slide-over-item-Route2"
           href="/route2"
         >
            Route2 
@@ -194,12 +205,13 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
     </div>
     <lib-user-navigation
       class="lg:hidden space-y-6 border-t border-gray-200 px-4 py-6"
-      issmallscreen=""
+      data-testid="navigation-slide-over-user-section"
     />
   </div>
   
   <header
     class="relative bg-white"
+    data-testid="navigation-bar"
   >
     <nav
       aria-label="Top"
@@ -213,6 +225,7 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
         >
           <button
             class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
+            data-testid="navigation-slide-over-toggle"
             type="button"
           >
             <span
@@ -240,6 +253,7 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
           </button>
           <div
             class="ml-4 flex lg:ml-0 h-8 w-8 relative"
+            data-testid="navigation-bar-logo"
           >
             <a
               href="/"
@@ -272,6 +286,7 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
             >
               <div
                 class="menu-item flex h-full space-x-8"
+                data-testid="navigation-bar-item-Route1"
               >
                 <a
                   class="menu-item-button flex items-center text-sm font-medium text-gray-700 hover:text-indigo-500"
@@ -282,6 +297,7 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
               </div>
               <div
                 class="menu-item flex h-full space-x-8"
+                data-testid="navigation-bar-item-Route2"
               >
                 <a
                   class="menu-item-button flex items-center text-sm font-medium text-gray-700 hover:text-indigo-500"
@@ -298,6 +314,7 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
           >
             <lib-user-navigation
               class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+              data-testid="navigation-bar-user-section"
             />
             <lib-product-search />
             <lib-cart-icon />

@@ -13,7 +13,7 @@ describe('AppStore', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        { provide: AuthFacade, useValue: { initializeAuth: jest.fn() } },
+        { provide: AuthFacade, useValue: { isAuthenticated: jest.fn() } },
         { provide: UserFacade, useValue: { fetchCurrentUser: jest.fn() } },
         { provide: CartFacade, useValue: { loadShoppingSession: jest.fn() } },
       ],
@@ -31,15 +31,30 @@ describe('AppStore', () => {
   it('should set initialized to true after executing side effects', async () => {
     expect.assertions(4);
 
-    const initializeAuth = jest.spyOn(authFacade, 'initializeAuth').mockResolvedValue(true);
+    const isAuthenticated = jest.spyOn(authFacade, 'isAuthenticated').mockReturnValue(true);
     const loadCurrentUser = jest.spyOn(userFacade, 'fetchCurrentUser');
     const loadShoppingSession = jest.spyOn(cartFacade, 'loadShoppingSession');
 
     await store.init();
 
-    expect(initializeAuth).toHaveBeenCalled();
+    expect(isAuthenticated).toHaveBeenCalled();
     expect(loadCurrentUser).toHaveBeenCalled();
     expect(loadShoppingSession).toHaveBeenCalled();
+    expect(store.initialized()).toBe(true);
+  });
+
+  it('should skip fetching user data without an active session but still initialize', async () => {
+    expect.assertions(4);
+
+    const isAuthenticated = jest.spyOn(authFacade, 'isAuthenticated').mockReturnValue(false);
+    const loadCurrentUser = jest.spyOn(userFacade, 'fetchCurrentUser');
+    const loadShoppingSession = jest.spyOn(cartFacade, 'loadShoppingSession');
+
+    await store.init();
+
+    expect(isAuthenticated).toHaveBeenCalled();
+    expect(loadCurrentUser).not.toHaveBeenCalled();
+    expect(loadShoppingSession).not.toHaveBeenCalled();
     expect(store.initialized()).toBe(true);
   });
 });

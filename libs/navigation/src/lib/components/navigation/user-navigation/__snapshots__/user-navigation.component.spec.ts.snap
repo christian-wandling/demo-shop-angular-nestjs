@@ -1,55 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserNavigationComponent snapshots should match snapshot for small screens 1`] = `
-<div
-  id="root7"
->
-  <div
-    class="flow-root"
-  >
-    <a
-      class="-m-2 block p-2 font-medium text-xl text-gray-400"
-    >
-       firstname lastname 
-    </a>
-  </div>
-  <div
-    class="flow-root"
-  >
-    <a
-      class="-m-2 block p-2 font-medium text-xl text-gray-700 hover:text-indigo-500 cursor-pointer"
-    >
-       Sign out 
-    </a>
-  </div>
-  
-  
-  
-  
-  
-</div>
-`;
-
 exports[`UserNavigationComponent snapshots should match snapshot with default state 1`] = `
 <div
-  id="root6"
+  id="root4"
 >
   <a
-    class="text-sm font-medium text-gray-700 hover:text-gray-800 cursor-pointer"
+    class="block -m-2 lg:m-0 p-2 lg:p-0 font-medium text-xl lg:text-sm text-gray-400"
+    data-testid="user-navigation-name"
   >
-     firstname lastname 
+     firstname lastname
+
   </a>
-  <span
-    aria-hidden="true"
-    class="h-6 w-px bg-gray-200"
-  />
   <a
-    class="text-sm font-medium text-gray-700 hover:text-gray-800 cursor-pointer"
+    class="block -m-2 lg:m-0 p-2 lg:p-0 font-medium text-xl lg:text-sm lg:hover:text-indigo-500 cursor-pointer"
+    data-testid="user-navigation-sign-out"
   >
-     Sign out 
+     Sign out
+
   </a>
-  
-  
   
   
 </div>

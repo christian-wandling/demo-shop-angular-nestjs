@@ -5,102 +5,108 @@ exports[`OrderDetailComponent should match the snapshot 1`] = `
   order={[Function Function]}
   user={[Function Function]}
 >
-  <div
-    class="mx-auto mb-8 px-8 max-w-5xl"
-    id="invoice"
+  <section
+    class="py-8 top-16 sticky z-10 border-b-2 border-gray-100 bg-white flex justify-between"
   >
-    <section
-      class="py-8 top-16 sticky z-10 border-b-2 border-gray-100 bg-white flex justify-between"
+    <div
+      class="flex flex-col gap-5"
+    >
+      <div>
+        <h1
+          class="text-s leading-tight font-bold text-gray-700"
+          data-testid="order-detail-username"
+        >
+           firstname lastname 
+        </h1>
+        <div
+          class="text-xs text-gray-500"
+        >
+          <p
+            data-testid="order-detail-address1"
+          >
+            street apartment
+          </p>
+          <p
+            data-testid="order-detail-address2"
+          >
+             zip city , region 
+          </p>
+          <p
+            data-testid="order-detail-address3"
+          >
+            country
+          </p>
+        </div>
+      </div>
+      <button
+        class="btn-print w-36 flex items-center justify-center rounded-md border border-transparent px-8 py-2 text-base font-medium bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'"
+        data-testid="order-detail-print-invoice-button"
+      >
+         Print 
+      </button>
+    </div>
+    <div
+      class="flex flex-col gap-2.5"
     >
       <div
-        class="flex flex-col gap-5"
-      >
-        <div>
-          <h1
-            class="text-s leading-tight font-bold text-gray-700"
-          >
-            firstname lastname
-          </h1>
-          <div
-            class="text-xs text-gray-500"
-          >
-            <p>
-              street apartment
-            </p>
-            <p>
-              zip city, region
-            </p>
-            <p>
-              country
-            </p>
-          </div>
-        </div>
-        <button
-          class="btn-print w-36 flex items-center justify-center rounded-md border border-transparent px-8 py-2 text-base font-medium bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2':"
-        >
-           Print 
-        </button>
-      </div>
-      <div
-        class="flex flex-col gap-2.5"
+        class="flex flex-col items-end"
       >
         <div
-          class="flex flex-col items-end"
+          class="text-s leading-tight font-semibold"
+          data-testid="order-detail-id"
         >
-          <div
-            class="text-s leading-tight font-semibold"
-          >
-            Order #1
-          </div>
-          <lib-date-time
-            class="text-xs text-gray-500"
-          >
-            <time
-              datetime="Jan 01, 2020"
-            >
-               Jan 01, 2020
-            </time>
-          </lib-date-time>
+          Order #1
         </div>
-        <lib-order-status
-          class="rounded-lg px-2 sm:px-4 py-1 sm:py-1.5 max-w-20 sm:max-w-28 text-center text-white border border-slate-300 text-xs bg-orange-500"
+        <lib-date-time
+          class="text-xs text-gray-500"
+          data-testid="date-time"
         >
-          Created
-        </lib-order-status>
-      </div>
-    </section>
-    <section>
-      <ul
-        class="divide-y divide-gray-100"
-      >
-        <li
-          class="flex justify-between gap-x-6 py-5"
-        >
-          <div
-            class="flex min-w-0 gap-x-4"
+          <time
+            datetime="Jan 01, 2020"
           >
-            <div
-              class="min-w-0 flex-auto"
-            >
-              <p
-                class="text-sm font-semibold leading-6 text-gray-900"
-              >
-                total
-              </p>
-            </div>
-          </div>
+             Jan 01, 2020
+          </time>
+        </lib-date-time>
+      </div>
+      <lib-order-status
+        class="rounded-lg px-2 sm:px-4 py-1 sm:py-1.5 max-w-20 sm:max-w-28 text-center text-white border border-slate-300 text-xs bg-orange-500"
+        data-testid="order-status"
+      >
+        Created
+      </lib-order-status>
+    </div>
+  </section><section>
+    <ul
+      class="divide-y divide-gray-100"
+    >
+      <li
+        class="flex justify-between gap-x-6 py-5"
+      >
+        <div
+          class="flex min-w-0 gap-x-4"
+        >
           <div
-            class="shrink-0 sm:flex sm:flex-col sm:items-end"
+            class="min-w-0 flex-auto"
           >
             <p
-              class="text-sm leading-6 text-gray-900"
+              class="text-sm font-semibold leading-6 text-gray-900"
             >
-              $0.00
+              total
             </p>
           </div>
-        </li>
-      </ul>
-    </section>
-  </div>
+        </div>
+        <div
+          class="shrink-0 sm:flex sm:flex-col sm:items-end"
+        >
+          <p
+            class="text-sm leading-6 text-gray-900"
+            data-testid="order-detail-total-price"
+          >
+             $0.00 
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
 </lib-order-detail>
 `;

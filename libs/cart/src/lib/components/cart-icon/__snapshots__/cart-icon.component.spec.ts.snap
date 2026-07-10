@@ -26,6 +26,7 @@ exports[`CartIconComponent should match the snapshot 1`] = `
       </svg>
       <span
         class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
+        data-testid="shopping-cart-icon-count"
       >
       </span>
       <span
