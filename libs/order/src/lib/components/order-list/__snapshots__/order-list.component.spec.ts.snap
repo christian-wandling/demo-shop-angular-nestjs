@@ -6,127 +6,139 @@ exports[`OrderListComponent should match the snapshot 1`] = `
   orders={[Function Function]}
   user={[Function Function]}
 >
-  <div
-    class="mx-auto px-8 max-w-7xl"
+  <section
+    class="py-8 top-16 sticky z-10 bg-white border-b-2 border-gray-100"
   >
-    <section
-      class="py-8 top-16 sticky z-10 bg-white border-b-2 border-gray-100"
+    <h1
+      class="font-bold text-gray-700"
+      data-testid="order-list-username"
     >
-      <h1
-        class="font-bold text-gray-700"
+       firstname lastname 
+    </h1>
+    <div
+      class="text-xs text-gray-500"
+    >
+      <p
+        data-testid="order-list-address1"
       >
-        firstname lastname
-      </h1>
-      <div
-        class="text-xs text-gray-500"
+        street apartment
+      </p>
+      <p
+        data-testid="order-list-address2"
       >
-        <p>
-          street apartment
-        </p>
-        <p>
-          zip city, region
-        </p>
-        <p>
-          country
-        </p>
-      </div>
-    </section>
-    <section>
-      <ul
-        class="divide-y divide-gray-100"
+         zip city , region 
+      </p>
+      <p
+        data-testid="order-list-address3"
       >
-        <li
-          class="relative flex flex-col md:flex-row justify-between gap-x-3 sm:gap-x-6 py-2 sm:py-5 py-2 sm:px-5 cursor-pointer hover:bg-slate-50"
-          tabindex="0"
+        country
+      </p>
+    </div>
+  </section><section>
+    <ul
+      class="divide-y divide-gray-100"
+    >
+      <li
+        class="relative flex flex-col md:flex-row justify-between gap-x-3 sm:gap-x-6 py-2 sm:py-5 py-2 sm:px-5 cursor-pointer hover:bg-slate-50"
+        data-testid="order-list-item-link1"
+        tabindex="0"
+      >
+        <div
+          class="flex min-w-0 gap-x-3 mb-4"
         >
           <div
-            class="flex min-w-0 gap-x-3 mb-4"
-          >
-            <div
-              class="min-w-0 flex-auto"
-            >
-              <p
-                class="text-xl mb-4 font-semibold hover:underline"
-              >
-                Order #1
-              </p>
-              <div
-                class="flex gap-1 sm:gap-4"
-              >
-              </div>
-            </div>
-          </div>
-          <lib-order-status
-            class="rounded-lg px-2 sm:px-4 py-1 sm:py-1.5 max-w-20 sm:max-w-28 text-center text-white border border-slate-300 text-xs sm:absolute sm:right-5 sm:top-5 mb-4 bg-orange-500"
-          >
-            Created
-          </lib-order-status>
-          <div
-            class="flex flex-col md:items-end sm:justify-end gap-1"
+            class="min-w-0 flex-auto"
           >
             <p
-              class="text-sm leading-none text-gray-900"
+              class="text-xl mb-4 font-semibold hover:underline"
+              data-testid="order-list-item-id1"
             >
-              $0.00
+               Order #1 
             </p>
-            <lib-date-time
-              class="text-xs leading-none text-gray-500"
+            <div
+              class="flex gap-1 sm:gap-4"
             >
-              <time
-                datetime="Jan 01, 2020"
-              >
-                 Jan 01, 2020
-              </time>
-            </lib-date-time>
+            </div>
           </div>
-        </li>
-        <li
-          class="relative flex flex-col md:flex-row justify-between gap-x-3 sm:gap-x-6 py-2 sm:py-5 py-2 sm:px-5 cursor-pointer hover:bg-slate-50"
-          tabindex="0"
+        </div>
+        <lib-order-status
+          class="rounded-lg px-2 sm:px-4 py-1 sm:py-1.5 max-w-20 sm:max-w-28 text-center text-white border border-slate-300 text-xs sm:absolute sm:right-5 sm:top-5 mb-4 bg-orange-500"
+          data-testid="order-list-item-status1"
+        >
+          Created
+        </lib-order-status>
+        <div
+          class="flex flex-col md:items-end sm:justify-end gap-1"
+        >
+          <p
+            class="text-sm leading-none text-gray-900"
+            data-testid="order-list-item-amount1"
+          >
+             $0.00 
+          </p>
+          <lib-date-time
+            class="text-xs leading-none text-gray-500"
+            data-testid="order-list-item-date1"
+          >
+            <time
+              datetime="Jan 01, 2020"
+            >
+               Jan 01, 2020
+            </time>
+          </lib-date-time>
+        </div>
+      </li>
+      <li
+        class="relative flex flex-col md:flex-row justify-between gap-x-3 sm:gap-x-6 py-2 sm:py-5 py-2 sm:px-5 cursor-pointer hover:bg-slate-50"
+        data-testid="order-list-item-link2"
+        tabindex="0"
+      >
+        <div
+          class="flex min-w-0 gap-x-3 mb-4"
         >
           <div
-            class="flex min-w-0 gap-x-3 mb-4"
-          >
-            <div
-              class="min-w-0 flex-auto"
-            >
-              <p
-                class="text-xl mb-4 font-semibold hover:underline"
-              >
-                Order #2
-              </p>
-              <div
-                class="flex gap-1 sm:gap-4"
-              >
-              </div>
-            </div>
-          </div>
-          <lib-order-status
-            class="rounded-lg px-2 sm:px-4 py-1 sm:py-1.5 max-w-20 sm:max-w-28 text-center text-white border border-slate-300 text-xs sm:absolute sm:right-5 sm:top-5 mb-4 bg-orange-500"
-          >
-            Created
-          </lib-order-status>
-          <div
-            class="flex flex-col md:items-end sm:justify-end gap-1"
+            class="min-w-0 flex-auto"
           >
             <p
-              class="text-sm leading-none text-gray-900"
+              class="text-xl mb-4 font-semibold hover:underline"
+              data-testid="order-list-item-id2"
             >
-              $0.00
+               Order #2 
             </p>
-            <lib-date-time
-              class="text-xs leading-none text-gray-500"
+            <div
+              class="flex gap-1 sm:gap-4"
             >
-              <time
-                datetime="Jan 01, 2020"
-              >
-                 Jan 01, 2020
-              </time>
-            </lib-date-time>
+            </div>
           </div>
-        </li>
-      </ul>
-    </section>
-  </div>
+        </div>
+        <lib-order-status
+          class="rounded-lg px-2 sm:px-4 py-1 sm:py-1.5 max-w-20 sm:max-w-28 text-center text-white border border-slate-300 text-xs sm:absolute sm:right-5 sm:top-5 mb-4 bg-orange-500"
+          data-testid="order-list-item-status2"
+        >
+          Created
+        </lib-order-status>
+        <div
+          class="flex flex-col md:items-end sm:justify-end gap-1"
+        >
+          <p
+            class="text-sm leading-none text-gray-900"
+            data-testid="order-list-item-amount2"
+          >
+             $0.00 
+          </p>
+          <lib-date-time
+            class="text-xs leading-none text-gray-500"
+            data-testid="order-list-item-date2"
+          >
+            <time
+              datetime="Jan 01, 2020"
+            >
+               Jan 01, 2020
+            </time>
+          </lib-date-time>
+        </div>
+      </li>
+    </ul>
+  </section>
 </lib-order-list>
 `;

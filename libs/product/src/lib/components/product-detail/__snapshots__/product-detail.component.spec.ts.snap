@@ -17,6 +17,7 @@ exports[`ProductDetailComponent should match the snapshot 1`] = `
         <img
           alt="Product 1"
           class="h-full w-full object-cover object-center group-hover:opacity-75"
+          data-testid="product-detail-image"
           fetchpriority="auto"
           fill=""
           loading="lazy"
@@ -37,8 +38,9 @@ exports[`ProductDetailComponent should match the snapshot 1`] = `
       >
         <h1
           class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+          data-testid="product-detail-name"
         >
-          Product 1
+           Product 1 
         </h1>
       </div>
       <div
@@ -51,11 +53,13 @@ exports[`ProductDetailComponent should match the snapshot 1`] = `
         </h2>
         <p
           class="text-3xl tracking-tight text-gray-900"
+          data-testid="product-detail-price"
         >
            $10.00 
         </p>
         <button
           class="btn-add mt-10 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium bg-gray-100 text-gray-800 pointer-events-none"
+          data-testid="product-detail-add-to-cart-button"
           disabled=""
         >
            Add to cart 
@@ -66,6 +70,7 @@ exports[`ProductDetailComponent should match the snapshot 1`] = `
       >
         <div
           class="product-description text-sm text-gray-600"
+          data-testid="product-detail-description"
         >
         </div>
       </div>
@@ -88,6 +93,7 @@ DebugElement {
         <img
           alt="Product 1"
           class="h-full w-full object-cover object-center group-hover:opacity-75"
+          data-testid="product-detail-image"
           fetchpriority="auto"
           fill=""
           loading="lazy"
@@ -108,8 +114,9 @@ DebugElement {
       >
         <h1
           class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+          data-testid="product-detail-name"
         >
-          Product 1
+           Product 1 
         </h1>
       </div>
       <div
@@ -122,11 +129,13 @@ DebugElement {
         </h2>
         <p
           class="text-3xl tracking-tight text-gray-900"
+          data-testid="product-detail-price"
         >
            $10.00 
         </p>
         <button
           class="btn-add mt-10 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium bg-gray-100 text-gray-800 pointer-events-none"
+          data-testid="product-detail-add-to-cart-button"
           disabled=""
         >
            Add to cart 
@@ -137,8 +146,9 @@ DebugElement {
       >
         <div
           class="product-description text-sm text-gray-600"
+          data-testid="product-detail-description"
         >
-          
+            
         </div>
       </div>
     </div>

@@ -49,19 +49,6 @@ describe('UserNavigationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should handle isSmallScreen input', () => {
-    // Test default value
-    expect(component.isSmallScreen()).toBe(false);
-
-    // Test setting to true
-    fixture.componentRef.setInput('isSmallScreen', true);
-    expect(component.isSmallScreen()).toBe(true);
-  });
-
   it('should call auth facade login and load shopping session', async () => {
     await component.login();
 
@@ -84,12 +71,6 @@ describe('UserNavigationComponent', () => {
 
   describe('snapshots', () => {
     it('should match snapshot with default state', () => {
-      expect(fixture.nativeElement).toMatchSnapshot();
-    });
-
-    it('should match snapshot for small screens', () => {
-      fixture.componentRef.setInput('isSmallScreen', true);
-      fixture.detectChanges();
       expect(fixture.nativeElement).toMatchSnapshot();
     });
   });

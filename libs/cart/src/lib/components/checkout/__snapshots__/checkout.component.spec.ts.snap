@@ -10,423 +10,440 @@ exports[`CheckoutComponent should match the snapshot 1`] = `
   user={[Function Function]}
 >
   <div
-    class="bg-gray-100 sm:m-2 lg:m-6 p-4 sm:p-8 lg:p-10 sm:rounded"
+    class="flex flex-col lg:flex-row justify-between gap-8"
   >
-    <div
-      class="flex flex-col lg:flex-row justify-between gap-8"
+    <form
+      class="ng-untouched ng-pristine ng-valid"
+      novalidate=""
     >
-      <form
-        class="ng-untouched ng-pristine ng-valid"
-        novalidate=""
+      <div
+        class="space-y-8"
+      >
+        <div>
+          <div
+            class="flex justify-between items-center bg-gray-100 cursor-pointer lg:pointer-events-none"
+          >
+            <h2
+              class="text-base font-semibold leading-7 text-gray-900"
+            >
+              Shipping information
+            </h2>
+            <svg
+              class="lg:hidden w-5 h-5 transition-transform duration-300 rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div
+            class="mt-4 lg:max-h-[1000px] grid md:grid-cols-8 gap-x-6 gap-y-4 transition-all duration-500 ease-in-out overflow-hidden max-h-[1000px]"
+          >
+            <div
+              class="md:col-span-4"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-500 disabled"
+                for="first-name"
+              >
+                 First name 
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="given-name"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-500 bg-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine"
+                  data-testid="checkout-form-element-firstname"
+                  disabled=""
+                  formcontrolname="firstname"
+                  id="first-name"
+                  name="first-name"
+                  type="text"
+                />
+              </div>
+              <lib-form-error
+                class="text-xs text-red-600"
+              >
+              </lib-form-error>
+            </div>
+            <div
+              class="md:col-span-4"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-500"
+                for="last-name"
+              >
+                 Last name 
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="family-name"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-500 bg-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine"
+                  data-testid="checkout-form-element-lastname"
+                  disabled=""
+                  formcontrolname="lastname"
+                  id="last-name"
+                  name="last-name"
+                  type="text"
+                />
+                <lib-form-error
+                  class="text-xs text-red-600"
+                >
+                </lib-form-error>
+              </div>
+            </div>
+            <div
+              class="md:col-span-4"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-500"
+                for="email"
+              >
+                 Email address 
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="email"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-500 bg-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine"
+                  data-testid="checkout-form-element-email"
+                  disabled=""
+                  formcontrolname="email"
+                  id="email"
+                  name="email"
+                  type="email"
+                />
+              </div>
+              <lib-form-error
+                class="text-xs text-red-600"
+              >
+              </lib-form-error>
+            </div>
+            <div
+              class="md:col-span-4"
+            >
+              <label
+                class="block text-sm font-medium leading-6 text-gray-900"
+                for="phone"
+              >
+                Phone
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="tel"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
+                  data-testid="checkout-form-element-phone"
+                  formcontrolname="phone"
+                  id="phone"
+                  name="phone"
+                />
+              </div>
+            </div>
+            <div
+              class="md:col-span-4"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-900"
+                for="country"
+              >
+                Country
+              </label>
+              <div
+                class="mt-2"
+              >
+                <select
+                  autocomplete="country-name"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
+                  data-testid="checkout-form-element-country"
+                  formcontrolname="country"
+                  id="country"
+                  name="country"
+                >
+                  <option
+                    disabled=""
+                    selected=""
+                    value=""
+                  >
+                    Select Country
+                  </option>
+                  <option>
+                    United States
+                  </option>
+                  <option>
+                    Austria
+                  </option>
+                  <option>
+                    Vietnam
+                  </option>
+                </select>
+              </div>
+              <lib-form-error
+                class="text-xs text-red-600"
+              >
+              </lib-form-error>
+            </div>
+            <div
+              class="md:col-span-5"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-900"
+                for="street"
+              >
+                Street
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="address-line1"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
+                  data-testid="checkout-form-element-street"
+                  formcontrolname="street"
+                  id="street"
+                  name="street"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="md:col-span-3"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-900"
+                for="apartment"
+              >
+                 Apartment 
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="address-line2"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
+                  data-testid="checkout-form-element-apartment"
+                  formcontrolname="apartment"
+                  id="apartment"
+                  name="apartment"
+                  type="text"
+                />
+              </div>
+              <lib-form-error
+                class="text-xs text-red-600"
+              >
+              </lib-form-error>
+            </div>
+            <div
+              class="md:col-span-3"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-900"
+                for="city"
+              >
+                City
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="address-level2"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
+                  data-testid="checkout-form-element-city"
+                  formcontrolname="city"
+                  id="city"
+                  name="city"
+                  type="text"
+                />
+              </div>
+              <lib-form-error
+                class="text-xs text-red-600"
+              >
+              </lib-form-error>
+            </div>
+            <div
+              class="md:col-span-3"
+            >
+              <label
+                class="block text-sm font-medium leading-6 text-gray-900"
+                for="region"
+              >
+                State / Province
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="address-level1"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
+                  data-testid="checkout-form-element-region"
+                  formcontrolname="region"
+                  id="region"
+                  name="region"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="md:col-span-2"
+            >
+              <label
+                class="required block text-sm font-medium leading-6 text-gray-900"
+                for="zip"
+              >
+                 ZIP / Postal code 
+              </label>
+              <div
+                class="mt-2"
+              >
+                <input
+                  autocomplete="postal-code"
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
+                  data-testid="checkout-form-element-zip"
+                  formcontrolname="zip"
+                  id="zip"
+                  name="zip"
+                  type="text"
+                />
+              </div>
+              <lib-form-error
+                class="text-xs text-red-600"
+              >
+              </lib-form-error>
+            </div>
+          </div>
+          <button
+            class="btn-update float-right m-2 mt-6 w-full lg:max-w-60 flex flex-1 items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium bg-gray-200 text-gray-800 pointer-events-none"
+            data-testid="checkout-update-shipping-information-button"
+            disabled=""
+          >
+             Update 
+          </button>
+        </div>
+      </div>
+    </form>
+    <section>
+      <h2
+        class="text-lg font-medium text-gray-900"
+        id="slide-over-title"
+      >
+        Order Summary
+      </h2>
+      <lib-cart-items
+        class="block mt-8"
+        data-testid="shopping-cart-items"
+      >
+        <ul
+          class="-my-6 divide-y divide-gray-200"
+        >
+          <li
+            class="flex py-6"
+          >
+            <div
+              class="relative h-24 w-24 aspect-1 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 group-hover:opacity-75 cursor-pointer"
+              data-testid="shopping-cart-items-link0-productId:0"
+              tabindex="0"
+            >
+              <img
+                alt="productName"
+                data-testid="shopping-cart-items-image0-productId:0"
+                fetchpriority="auto"
+                fill=""
+                loading="lazy"
+                ng-img="true"
+                placeholder=""
+                sizes="100vw"
+                src="productThumbnail"
+                srcset="productThumbnail 640w, productThumbnail 750w, productThumbnail 828w, productThumbnail 1080w, productThumbnail 1200w, productThumbnail 1920w, productThumbnail 2048w, productThumbnail 3840w"
+                style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(productThumbnail); filter: blur(15px);"
+                title="productName"
+              />
+            </div>
+            <div
+              class="ml-4 flex flex-1 flex-col"
+            >
+              <div>
+                <div
+                  class="flex justify-between text-base font-medium text-gray-900"
+                >
+                  <h3
+                    data-testid="shopping-cart-items-name0-productId:0"
+                  >
+                     productName 
+                  </h3>
+                  <p
+                    class="ml-4"
+                    data-testid="shopping-cart-items-price0-productId:0"
+                  >
+                     $0.00 
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex flex-1 items-end justify-between text-sm"
+              >
+                <p
+                  class="text-gray-500"
+                  data-testid="shopping-cart-items-quantity0-productId:0"
+                >
+                   Qty 0 
+                </p>
+                <div
+                  class="flex"
+                >
+                  <button
+                    class="font-medium text-indigo-600 hover:text-indigo-500"
+                    data-testid="shopping-cart-items-remove-button0-productId:0"
+                    type="button"
+                  >
+                     Remove 
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </lib-cart-items>
+      <div
+        class="border-t border-gray-900/10 mt-12"
       >
         <div
-          class="space-y-8"
+          class="mt-8 flex justify-between"
         >
-          <div>
-            <div
-              class="flex justify-between items-center p-4 bg-gray-100 cursor-pointer lg:pointer-events-none"
-            >
-              <h2
-                class="text-base font-semibold leading-7 text-gray-900"
-              >
-                Shipping information
-              </h2>
-              <svg
-                class="lg:hidden w-5 h-5 transition-transform duration-300 rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19 9l-7 7-7-7"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <div
-              class="mt-4 lg:max-h-[1000px] grid md:grid-cols-8 gap-x-6 gap-y-4 transition-all duration-500 ease-in-out overflow-hidden max-h-[1000px]"
-            >
-              <div
-                class="md:col-span-4"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-500 disabled"
-                  for="first-name"
-                >
-                   First name 
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="given-name"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-500 bg-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine"
-                    disabled=""
-                    formcontrolname="firstname"
-                    id="first-name"
-                    name="first-name"
-                    type="text"
-                  />
-                </div>
-                <lib-form-error
-                  class="text-xs text-red-600"
-                >
-                </lib-form-error>
-              </div>
-              <div
-                class="md:col-span-4"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-500"
-                  for="last-name"
-                >
-                   Last name 
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="family-name"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-500 bg-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine"
-                    disabled=""
-                    formcontrolname="lastname"
-                    id="last-name"
-                    name="last-name"
-                    type="text"
-                  />
-                  <lib-form-error
-                    class="text-xs text-red-600"
-                  >
-                  </lib-form-error>
-                </div>
-              </div>
-              <div
-                class="md:col-span-4"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-500"
-                  for="email"
-                >
-                   Email address 
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="email"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-500 bg-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine"
-                    disabled=""
-                    formcontrolname="email"
-                    id="email"
-                    name="email"
-                    type="email"
-                  />
-                </div>
-                <lib-form-error
-                  class="text-xs text-red-600"
-                >
-                </lib-form-error>
-              </div>
-              <div
-                class="md:col-span-4"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-900"
-                  for="phone"
-                >
-                  Phone
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="tel"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
-                    formcontrolname="phone"
-                    id="phone"
-                    name="phone"
-                  />
-                </div>
-              </div>
-              <div
-                class="md:col-span-4"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-900"
-                  for="country"
-                >
-                  Country
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <select
-                    autocomplete="country-name"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
-                    formcontrolname="country"
-                    id="country"
-                    name="country"
-                  >
-                    <option>
-                      United States
-                    </option>
-                    <option>
-                      Austria
-                    </option>
-                    <option>
-                      Vietnam
-                    </option>
-                  </select>
-                </div>
-                <lib-form-error
-                  class="text-xs text-red-600"
-                >
-                </lib-form-error>
-              </div>
-              <div
-                class="md:col-span-5"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-900"
-                  for="street"
-                >
-                  Street
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="address-line1"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
-                    formcontrolname="street"
-                    id="street"
-                    name="street"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div
-                class="md:col-span-3"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-900"
-                  for="apartment"
-                >
-                   Apartment 
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="address-line2"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
-                    formcontrolname="apartment"
-                    id="apartment"
-                    name="apartment"
-                    type="text"
-                  />
-                </div>
-                <lib-form-error
-                  class="text-xs text-red-600"
-                >
-                </lib-form-error>
-              </div>
-              <div
-                class="md:col-span-3"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-900"
-                  for="city"
-                >
-                  City
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="address-level2"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
-                    formcontrolname="city"
-                    id="city"
-                    name="city"
-                    type="text"
-                  />
-                </div>
-                <lib-form-error
-                  class="text-xs text-red-600"
-                >
-                </lib-form-error>
-              </div>
-              <div
-                class="md:col-span-3"
-              >
-                <label
-                  class="block text-sm font-medium leading-6 text-gray-900"
-                  for="region"
-                >
-                  State / Province
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="address-level1"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
-                    formcontrolname="region"
-                    id="region"
-                    name="region"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div
-                class="md:col-span-2"
-              >
-                <label
-                  class="required block text-sm font-medium leading-6 text-gray-900"
-                  for="zip"
-                >
-                   ZIP / Postal code 
-                </label>
-                <div
-                  class="mt-2"
-                >
-                  <input
-                    autocomplete="postal-code"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ng-untouched ng-pristine ng-valid"
-                    formcontrolname="zip"
-                    id="zip"
-                    name="zip"
-                    type="text"
-                  />
-                </div>
-                <lib-form-error
-                  class="text-xs text-red-600"
-                >
-                </lib-form-error>
-              </div>
-              <button
-                class="btn-update md:col-span-full float-right m-2 mt-6 lg:max-w-60 flex flex-1 items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium bg-gray-200 text-gray-800 pointer-events-none"
-                disabled=""
-              >
-                 Update 
-              </button>
-            </div>
-          </div>
+          <span>
+            Total
+          </span>
+          <span
+            data-testid="checkout-total-price"
+          >
+            $0.00
+          </span>
         </div>
-      </form>
+      </div>
       <section>
-        <h2
-          class="text-lg font-medium text-gray-900"
-          id="slide-over-title"
-        >
-          Order Summary
-        </h2>
-        <lib-cart-items>
-          <div
-            class="mt-8"
-          >
-            <div
-              class="flow-root"
-            >
-              <ul
-                class="-my-6 divide-y divide-gray-200"
-              >
-                <li
-                  class="flex py-6"
-                >
-                  <div
-                    class="relative h-24 w-24 aspect-1 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 group-hover:opacity-75 cursor-pointer"
-                    tabindex="0"
-                  >
-                    <img
-                      alt="productName"
-                      fetchpriority="auto"
-                      fill=""
-                      loading="lazy"
-                      ng-img="true"
-                      placeholder=""
-                      sizes="100vw"
-                      src="productThumbnail"
-                      srcset="productThumbnail 640w, productThumbnail 750w, productThumbnail 828w, productThumbnail 1080w, productThumbnail 1200w, productThumbnail 1920w, productThumbnail 2048w, productThumbnail 3840w"
-                      style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(productThumbnail); filter: blur(15px);"
-                      title="productName"
-                    />
-                  </div>
-                  <div
-                    class="ml-4 flex flex-1 flex-col"
-                  >
-                    <div>
-                      <div
-                        class="flex justify-between text-base font-medium text-gray-900"
-                      >
-                        <h3>
-                          <a>
-                            productName
-                          </a>
-                        </h3>
-                        <p
-                          class="ml-4"
-                        >
-                          $0.00
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="flex flex-1 items-end justify-between text-sm"
-                    >
-                      <p
-                        class="text-gray-500"
-                      >
-                        Qty 0
-                      </p>
-                      <div
-                        class="flex"
-                      >
-                        <button
-                          class="font-medium text-indigo-600 hover:text-indigo-500"
-                          type="button"
-                        >
-                           Remove 
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </lib-cart-items>
         <div
-          class="border-t border-gray-900/10 mt-12"
+          class="mt-6 flex items-center justify-center gap-x-6"
         >
-          <div
-            class="mt-8 flex justify-between"
+          <button
+            class="btn-checkout mt-6 lg:max-w-60 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            data-testid="checkout-finish-button"
           >
-            <span>
-              Total
-            </span>
-            <span>
-              $0.00
-            </span>
-          </div>
+             Checkout 
+          </button>
         </div>
-        <section>
-          <div
-            class="mt-6 flex items-center justify-center gap-x-6"
-          >
-            <button
-              class="btn-checkout mt-6 lg:max-w-60 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-               Checkout 
-            </button>
-          </div>
-        </section>
       </section>
-    </div>
+    </section>
   </div>
 </lib-checkout>
 `;
