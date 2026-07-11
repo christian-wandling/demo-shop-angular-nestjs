@@ -142,10 +142,10 @@ Access the keycloak server, click on the Public Key of RS256, and use its value 
 http://localhost:8080/admin/master/console/#/demo_shop/realm-settings/keys
 ```
 
-Then restart the api.
+Then recreate the api so it picks up the new value.
 
 ```
-docker compose restart api
+docker compose up -d api
 ```
 
 8. Access the application
