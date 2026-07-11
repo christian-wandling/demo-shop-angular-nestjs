@@ -111,7 +111,6 @@ cp .env.example .env
 ```
 
 - You can choose to omit configuring sentry or see the section on setting up [sentry](#sentry-setup)
-- Leave `KEYCLOAK_REALM_PUBLIC_KEY` as-is — you fill it in at step 7, once keycloak has generated it.
 - `DB_PORT` sets the postgres host port. `DATABASE_URL` reads it, so both stay in sync.
 - (Optional) Set `API_PORT`, `FRONTEND_PORT`, `KEYCLOAK_PORT` or `PGADMIN_PORT` to change the port of a service. Setting `KEYCLOAK_PORT` also requires updating the keycloak url in `apps/frontend/src/environments/environment.ts`.
 
