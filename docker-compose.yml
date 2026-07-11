@@ -2,7 +2,7 @@ name: demo-shop-angular-nestjs
 
 services:
   db:
-    image: postgres
+    image: postgres:17
     environment:
       - POSTGRES_PASSWORD
       - POSTGRES_USER

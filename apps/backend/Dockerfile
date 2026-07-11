@@ -1,11 +1,11 @@
-FROM docker.io/node:lts-alpine AS dev
+FROM docker.io/node:22-alpine AS dev
 RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --ignore-scripts
 
 
-FROM docker.io/node:lts-alpine AS build
+FROM docker.io/node:22-alpine AS build
 ENV NODE_ENV=production
 ARG SENTRY_AUTH_TOKEN
 ARG SENTRY_ORG
@@ -19,7 +19,7 @@ WORKDIR /app/dist/apps/backend
 RUN npm ci --ignore-scripts
 
 
-FROM docker.io/node:lts-alpine AS prod
+FROM docker.io/node:22-alpine AS prod
 RUN apk add --no-cache dumb-init openssl
 WORKDIR /app
 ENV NODE_ENV=production
