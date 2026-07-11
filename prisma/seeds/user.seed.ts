@@ -14,6 +14,8 @@ interface KeycloakAdminUser {
   access_token: string;
 }
 
+const getKeycloakUrl = (): string => `http://localhost:${process.env.KEYCLOAK_PORT ?? '8080'}`;
+
 const getHasUser = async (prisma: PrismaClient, email: string): Promise<boolean> => {
   const user = await prisma.user.findFirst({
     where: {
@@ -70,7 +72,7 @@ const getKeycloakAdminToken = async (): Promise<KeycloakAdminUser> => {
   try {
     const username = process.env.KEYCLOAK_ADMIN as string;
     const password = process.env.KEYCLOAK_ADMIN_PASSWORD as string;
-    const url = `http://localhost:8080/realms/master/protocol/openid-connect/token`;
+    const url = `${getKeycloakUrl()}/realms/master/protocol/openid-connect/token`;
 
     const res = await fetch(url, {
       method: 'POST',
@@ -99,7 +101,7 @@ const getKeycloakAdminToken = async (): Promise<KeycloakAdminUser> => {
 
 const getKeycloakUserIds = async (): Promise<UserIdentity[]> => {
   const { access_token } = await getKeycloakAdminToken();
-  const url = `http://localhost:8080/admin/realms/demo_shop/users`;
+  const url = `${getKeycloakUrl()}/admin/realms/demo_shop/users`;
 
   try {
     const res = await fetch(url, {

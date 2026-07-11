@@ -1,11 +1,11 @@
-FROM docker.io/node:lts-alpine AS dev
+FROM docker.io/node:22-alpine AS dev
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --ignore-scripts
 
 
-FROM docker.io/node:lts-alpine AS build
+FROM docker.io/node:22-alpine AS build
 RUN apk add --no-cache gettext
 ARG KEYCLOAK_URL
 ARG KEYCLOAK_REALM
