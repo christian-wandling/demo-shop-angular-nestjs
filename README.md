@@ -123,7 +123,6 @@ docker network create shared
 5. Build & run the docker containers
 
 ```
-# this will build and run docker containers for frontend, api, postgres, keycloak, pgadmin
 npm start
 ```
 
