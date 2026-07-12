@@ -1,0 +1,26 @@
+name: Sonar
+description: Analyse the project with SonarQube, tagging the analysis with the version from package.json.
+
+inputs:
+  sonar-token:
+    description: SonarCloud authentication token.
+    required: true
+  github-token:
+    description: Token the scanner uses to decorate pull requests.
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Get version
+      id: version
+      shell: bash
+      run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+
+    - name: Scan
+      uses: SonarSource/sonarqube-scan-action@bfd4e558cda28cda6b5defafb9232d191be8c203
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        SONAR_TOKEN: ${{ inputs.sonar-token }}
+      with:
+        args: -Dsonar.projectVersion=${{ steps.version.outputs.version }}
