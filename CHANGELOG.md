@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+### [0.3.63](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.62...v0.3.63) (2026-07-13)
+
 ### [0.3.62](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.61...v0.3.62) (2026-07-12)
 
 ### [0.3.61](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.60...v0.3.61) (2026-07-12)
