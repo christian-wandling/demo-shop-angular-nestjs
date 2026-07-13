@@ -44,11 +44,6 @@ const meta: Meta<UserNavigationComponent> = {
     }),
   ],
   argTypes: {
-    isSmallScreen: {
-      control: {
-        type: 'boolean',
-      },
-    },
     login: { action: 'login', control: false },
     register: { action: 'register', control: false },
     logout: { action: 'logout', control: false },
@@ -63,9 +58,6 @@ export default meta;
 type Story = StoryObj<UserNavigationComponent>;
 
 export const Unauthenticated: Story = {
-  args: {
-    isSmallScreen: false,
-  },
   decorators: [
     applicationConfig({
       providers: [{ provide: UserFacade, useValue: mockUserFacade() }],
@@ -80,9 +72,6 @@ export const Unauthenticated: Story = {
 };
 
 export const Authenticated: Story = {
-  args: {
-    isSmallScreen: false,
-  },
   decorators: [
     applicationConfig({
       providers: [{ provide: UserFacade, useValue: mockUserFacade(mockUser) }],
