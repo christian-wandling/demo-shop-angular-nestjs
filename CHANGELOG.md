@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [0.3.65](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.64...v0.3.65) (2026-07-13)
+
+
+### Bug Fixes
+
+* **navigation:** drop the isSmallScreen arg the component no longer has ([#88](https://github.com/christian-wandling/demo-shop-angular-nestjs/issues/88)) ([3dfc45a](https://github.com/christian-wandling/demo-shop-angular-nestjs/commit/3dfc45a6ce9e61e0e335b1328f227b4280628491))
+
 ### [0.3.64](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.63...v0.3.64) (2026-07-13)
 
 
