@@ -47,9 +47,10 @@ jobs:
         run: |
           docker build \
           --platform linux/amd64 \
-          --build-arg SENTRY_AUTH_TOKEN="${SENTRY_AUTH_TOKEN}" \
-          --build-arg SENTRY_ORG="${SENTRY_ORG}" \
-          --build-arg SENTRY_DEMO_SHOP_API_PROJECT="${SENTRY_DEMO_SHOP_API_PROJECT}" \
+          --build-arg SENTRY_AUTH_TOKEN="${{ secrets.SENTRY_AUTH_TOKEN }}" \
+          --build-arg SENTRY_ORG="${{ secrets.SENTRY_ORG }}" \
+          --build-arg SENTRY_DEMO_SHOP_API_PROJECT="${{ secrets.SENTRY_DEMO_SHOP_API_PROJECT }}" \
+          --build-arg SENTRY_DEMO_SHOP_API_DSN="${{ secrets.SENTRY_DEMO_SHOP_API_DSN }}" \
           -f apps/backend/Dockerfile \
           -t demo-shop-api:latest .
 
@@ -129,7 +130,7 @@ jobs:
       TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
       TF_VAR_cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       TF_VAR_cloudflare_domain_name: ${{ secrets.CLOUDFLARE_DOMAIN_NAME }}
-      TF_VAR_sentry_demo_shop_api_dsn: ${{ secrets.CLOUDFLARE_DOMAIN_NAME }}
+      TF_VAR_sentry_demo_shop_api_dsn: ${{ secrets.SENTRY_DEMO_SHOP_API_DSN }}
       TF_VAR_github_token: ${{ secrets.DEPLOY_INFRA_TOKEN }}
       TF_VAR_github_org: ${{ github.repository_owner }}
       TF_VAR_github_repo: ${{ github.event.repository.name }}
@@ -220,7 +221,7 @@ jobs:
       TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
       TF_VAR_cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       TF_VAR_cloudflare_domain_name: ${{ secrets.CLOUDFLARE_DOMAIN_NAME }}
-      TF_VAR_sentry_demo_shop_api_dsn: ${{ secrets.CLOUDFLARE_DOMAIN_NAME }}
+      TF_VAR_sentry_demo_shop_api_dsn: ${{ secrets.SENTRY_DEMO_SHOP_API_DSN }}
       TF_VAR_github_token: ${{ secrets.DEPLOY_INFRA_TOKEN }}
       TF_VAR_github_org: ${{ github.repository_owner }}
       TF_VAR_github_repo: ${{ github.event.repository.name }}
