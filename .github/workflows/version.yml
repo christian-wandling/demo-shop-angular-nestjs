@@ -70,7 +70,7 @@ jobs:
           fi
 
       - name: Create new version
-        if: ${{ !inputs.dry_run }}
+        if: ${{ !inputs.dry_run && steps.check-version.outputs.skip != 'true' }}
         run: |
           touch CHANGELOG.md
           npx standard-version --infile CHANGELOG.md --commit-all
