@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [0.3.64](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.63...v0.3.64) (2026-07-13)
+
+
+### Bug Fixes
+
+* **cd:** wire the API's real Sentry secrets, not the Cloudflare domain ([#87](https://github.com/christian-wandling/demo-shop-angular-nestjs/issues/87)) ([8331d2c](https://github.com/christian-wandling/demo-shop-angular-nestjs/commit/8331d2cf7652ae2562802f47d2c43af10e76bccf))
+
 ### [0.3.63](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.62...v0.3.63) (2026-07-13)
 
 ### [0.3.62](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.61...v0.3.62) (2026-07-12)
