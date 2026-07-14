@@ -57,6 +57,14 @@ jobs:
   smoke:
     runs-on: ubuntu-latest
 
+    env:
+      POSTGRES_USER: demo_shop
+      POSTGRES_PASSWORD: demo_shop
+      POSTGRES_DB: demo_shop
+      DB_PORT: 5432
+      KEYCLOAK_PORT: 8080
+      API_PORT: 3000
+
     steps:
       - uses: actions/checkout@v4
 
@@ -69,16 +77,17 @@ jobs:
 
       - name: Write the stack env
         run: |
-          cat > .env <<'EOF'
-          POSTGRES_USER=demo_shop
-          POSTGRES_PASSWORD=demo_shop
-          POSTGRES_DB=demo_shop
-          DB_PORT=5432
-          DATABASE_URL=postgresql://demo_shop:demo_shop@localhost:5432/demo_shop?schema=public
+          cat > .env <<EOF
+          POSTGRES_USER=${POSTGRES_USER}
+          POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+          POSTGRES_DB=${POSTGRES_DB}
+          DB_PORT=${DB_PORT}
+          DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@localhost:${DB_PORT}/${POSTGRES_DB}?schema=public
           KEYCLOAK_ADMIN=admin
           KEYCLOAK_ADMIN_PASSWORD=admin
-          KEYCLOAK_PORT=8080
+          KEYCLOAK_PORT=${KEYCLOAK_PORT}
           KEYCLOAK_REALM_PUBLIC_KEY=
+          API_PORT=${API_PORT}
           PGADMIN_DEFAULT_EMAIL=ci@example.com
           PGADMIN_DEFAULT_PASSWORD=ci
           SENTRY_AUTH_TOKEN=
@@ -97,7 +106,7 @@ jobs:
       - name: Wait for the database
         run: |
           for _ in $(seq 1 30); do
-            if docker compose exec -T db psql -U demo_shop -d demo_shop -c 'SELECT 1' >/dev/null 2>&1; then
+            if docker compose exec -T db psql -U "${POSTGRES_USER}" -d "${POSTGRES_DB}" -c 'SELECT 1' >/dev/null 2>&1; then
               exit 0
             fi
             sleep 2
@@ -109,7 +118,7 @@ jobs:
       - name: Wait for keycloak
         run: |
           for _ in $(seq 1 60); do
-            if curl -fsS http://localhost:8080/health/ready >/dev/null 2>&1; then
+            if curl -fsS "http://localhost:${KEYCLOAK_PORT}/health/ready" >/dev/null 2>&1; then
               exit 0
             fi
             sleep 5
@@ -127,7 +136,7 @@ jobs:
       - name: Assert the products endpoint serves seeded data
         run: |
           for _ in $(seq 1 60); do
-            if curl -fsS http://localhost:3000/api/v1/products -o products.json \
+            if curl -fsS "http://localhost:${API_PORT}/api/v1/products" -o products.json \
               && node .github/scripts/assert-products.mjs products.json; then
               exit 0
             fi
