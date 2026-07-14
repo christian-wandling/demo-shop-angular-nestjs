@@ -8,6 +8,9 @@ tmp
 # dependencies
 node_modules
 
+# agent worktrees and local agent config (bind-mounted into the dev containers)
+.claude/
+
 # IDEs and editors
 /.idea
 .project
