@@ -53,3 +53,102 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           sonar-token: ${{ secrets.SONAR_TOKEN }}
+
+  smoke:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - run: npm ci --ignore-scripts
+      - run: npx prisma generate
+
+      - name: Write the stack env
+        run: |
+          cat > .env <<'EOF'
+          POSTGRES_USER=demo_shop
+          POSTGRES_PASSWORD=demo_shop
+          POSTGRES_DB=demo_shop
+          DB_PORT=5432
+          DATABASE_URL=postgresql://demo_shop:demo_shop@localhost:5432/demo_shop?schema=public
+          KEYCLOAK_ADMIN=admin
+          KEYCLOAK_ADMIN_PASSWORD=admin
+          KEYCLOAK_PORT=8080
+          KEYCLOAK_REALM_PUBLIC_KEY=
+          PGADMIN_DEFAULT_EMAIL=ci@example.com
+          PGADMIN_DEFAULT_PASSWORD=ci
+          SENTRY_AUTH_TOKEN=
+          SENTRY_ORG=
+          SENTRY_DEMO_SHOP_API_PROJECT=
+          SENTRY_DEMO_SHOP_API_DSN=
+          SENTRY_DEMO_SHOP_UI_DSN=
+          EOF
+
+      - name: Create the shared network
+        run: docker network create shared
+
+      - name: Boot the stack
+        run: docker compose up -d --build db keycloak api
+
+      - name: Wait for the database
+        run: |
+          for _ in $(seq 1 30); do
+            if docker compose exec -T db psql -U demo_shop -d demo_shop -c 'SELECT 1' >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo 'the database never accepted a query'
+          docker compose logs db
+          exit 1
+
+      - name: Wait for keycloak
+        run: |
+          for _ in $(seq 1 60); do
+            if curl -fsS http://localhost:8080/health/ready >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'keycloak never became ready'
+          docker compose logs keycloak
+          exit 1
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+
+      - name: Seed the database
+        run: npx prisma db seed
+
+      - name: Assert the products endpoint serves seeded data
+        run: |
+          for _ in $(seq 1 60); do
+            if curl -fsS http://localhost:3000/api/v1/products -o products.json \
+              && node .github/scripts/assert-products.mjs products.json; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'the products endpoint never served seeded data'
+          docker compose logs api
+          exit 1
+
+      - name: Tear down
+        if: always()
+        run: docker compose down -v
+
+  images:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the api image
+        run: docker build -f apps/backend/Dockerfile -t demo-shop-api:ci .
+
+      - name: Build the frontend image
+        run: docker build -f apps/frontend/Dockerfile -t demo-shop-frontend:ci .
