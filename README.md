@@ -230,7 +230,7 @@ http://localhost:8080/admin/master/console/#/demo_shop/users/add-user
 npm run prisma:seed
 ```
 
-The [seed](prisma/seed.ts) script will attempt to add entities to the database:
+Run from host, the [seed](prisma/seed.ts) script will attempt to add entities to the database:
 
 - products, if the product table is empty
 - users, if any user in the keycloak has not been added to the user table
