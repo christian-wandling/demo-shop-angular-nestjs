@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CartFacade } from '../../cart.facade';
 
 /**
@@ -12,7 +11,7 @@ import { CartFacade } from '../../cart.facade';
 @Component({
   selector: 'lib-cart-icon',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './cart-icon.component.html',
   styleUrl: './cart-icon.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
