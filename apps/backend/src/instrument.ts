@@ -13,8 +13,8 @@ if (SENTRY_DEMO_SHOP_API_DSN) {
     beforeSend(event) {
       const isNotHealthCheck = !event.request?.url?.includes('health-check');
 
-      if (event.request?.data) {
-        delete event.request.data.password;
+      if (event.request?.data && typeof event.request.data === 'object') {
+        delete (event.request.data as Record<string, unknown>).password;
       }
 
       if (isNotHealthCheck) {
