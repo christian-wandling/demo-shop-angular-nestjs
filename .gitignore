@@ -78,3 +78,5 @@ rest
 storybook-static
 **/docs/**
 /build-storybook.log
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md

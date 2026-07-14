@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, input, InputSignal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ValidationErrors } from '@angular/forms';
 
 /**
@@ -17,7 +16,7 @@ import { ValidationErrors } from '@angular/forms';
 @Component({
   selector: 'lib-form-error',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './form-error.component.html',
   styleUrl: './form-error.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

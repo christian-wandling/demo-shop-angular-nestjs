@@ -12,8 +12,7 @@ import { AuthFacade, PermissionStrategy } from '@demo-shop/auth';
 import { UserResponse } from '@demo-shop/api';
 import { signal } from '@angular/core';
 import { mockUser, UserFacade } from '@demo-shop/user';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 import { FormsModule } from '@angular/forms';
 
 const navItems = [

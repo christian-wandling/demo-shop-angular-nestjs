@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { ProductFacade } from '../../product.facade';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'lib-product-search',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, FormsModule],
+  imports: [NgOptimizedImage, FormsModule],
   templateUrl: './product-search.component.html',
   styleUrl: './product-search.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

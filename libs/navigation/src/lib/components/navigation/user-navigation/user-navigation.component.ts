@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AuthFacade } from '@demo-shop/auth';
 import { UserFacade } from '@demo-shop/user';
 import { CartFacade } from '@demo-shop/cart';
@@ -13,7 +12,7 @@ import { CartFacade } from '@demo-shop/cart';
 @Component({
   selector: 'lib-user-navigation',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './user-navigation.component.html',
   styleUrl: './user-navigation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -5,8 +5,7 @@ import { UserResponse } from '@demo-shop/api';
 import { CartFacade } from '@demo-shop/cart';
 import { UserNavigationComponent } from './user-navigation.component';
 import { mockUser, UserFacade } from '@demo-shop/user';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 import { AuthFacade } from '@demo-shop/auth';
 
 const mockUserFacade = (user?: UserResponse) => ({

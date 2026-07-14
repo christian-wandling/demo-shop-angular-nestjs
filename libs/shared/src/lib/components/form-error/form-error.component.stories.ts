@@ -1,7 +1,6 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
 import { FormErrorComponent } from './form-error.component';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 import { CommonModule } from '@angular/common';
 import { importProvidersFrom } from '@angular/core';
 

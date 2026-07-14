@@ -5,8 +5,7 @@ import { provideRouter, Router } from '@angular/router';
 import { importProvidersFrom, signal } from '@angular/core';
 import { ProductSearchComponent } from './product-search.component';
 import { ProductFacade } from '../../product.facade';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 
 const productFilter = signal({ name: '' });
 
