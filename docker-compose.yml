@@ -42,7 +42,6 @@ services:
       - PORT=3000
       - NODE_ENV=development
       - NX_DAEMON=false
-      - NX_REJECT_UNKNOWN_LOCAL_CACHE=0
       - ALLOWED_ORIGIN=http://localhost:${FRONTEND_PORT:-4200}
       - KEYCLOAK_REALM=demo_shop
       - KEYCLOAK_CLIENT_API=demo_shop_api
