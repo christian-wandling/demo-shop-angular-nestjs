@@ -663,14 +663,16 @@
         "http://localhost:80/*",
         "http://localhost:4200/*",
         "http://localhost/*",
-        "https://localhost:443/*"
+        "https://localhost:443/*",
+        "http://127.0.0.1:4200/*"
       ],
       "webOrigins": [
         "http://localhost:80",
         "https://localhost",
         "https://localhost:443",
         "http://localhost",
-        "http://localhost:4200"
+        "http://localhost:4200",
+        "http://127.0.0.1:4200"
       ],
       "notBefore": 0,
       "bearerOnly": false,
