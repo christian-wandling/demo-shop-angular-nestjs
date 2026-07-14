@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
  * @example
  * <lib-date-time
  *   [dateTime]="myDate"
- *   [pattern]="'YYYY-MM-DD'"
+ *   [pattern]="'yyyy-MM-dd'"
  *   [timezone]="'America/New_York'"/>
  */
 @Component({
@@ -41,9 +41,9 @@ export class DateTimeComponent {
    * The formatting pattern to apply to the date and time value.
    *
    * Uses the format pattern syntax supported by your date formatting library.
-   * Default value is 'MMM dd, YYYY' which produces outputs like 'Mar 17, 2025'.
+   * Default value is 'MMM dd, yyyy' which produces outputs like 'Mar 17, 2025'.
    */
-  readonly pattern: InputSignal<string> = input<string>('MMM dd, YYYY');
+  readonly pattern: InputSignal<string> = input<string>('MMM dd, yyyy');
 
   /**
    * The timezone to use when displaying the date and time.

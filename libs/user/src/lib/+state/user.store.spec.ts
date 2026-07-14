@@ -82,11 +82,14 @@ describe('UserStore', () => {
 
   describe('onInit', () => {
     it('should set up effect to track user in Sentry when store initializes', () => {
+      TestBed.tick();
+
       expect(monitoringFacade.setUser).toHaveBeenCalledWith({ id: undefined });
     });
 
     it('should update Sentry user when store user changes', async () => {
       await store.fetchCurrentUser();
+      TestBed.tick();
 
       expect(monitoringFacade.setUser).toHaveBeenCalledWith({ id: 1 });
     });
@@ -94,11 +97,14 @@ describe('UserStore', () => {
 
   describe('onInit', () => {
     it('should set up effect to track user in Sentry when store initializes', () => {
+      TestBed.tick();
+
       expect(monitoringFacade.setUser).toHaveBeenCalledWith({ id: undefined });
     });
 
     it('should update Sentry user when store user changes', async () => {
       await store.fetchCurrentUser();
+      TestBed.tick();
 
       expect(monitoringFacade.setUser).toHaveBeenCalledWith({ id: 1 });
     });

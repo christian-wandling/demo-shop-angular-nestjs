@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { signal } from '@angular/core';
 import { CartFacade } from '../../cart.facade';
 import { CartIconComponent } from './cart-icon.component';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 
 const mockCartFacade = {
   getItemCount: () => signal(5),

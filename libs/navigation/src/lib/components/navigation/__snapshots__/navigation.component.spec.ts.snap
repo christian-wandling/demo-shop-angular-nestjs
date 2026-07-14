@@ -64,12 +64,13 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
               <img
                 alt="Demo shop logo"
                 class="object-contain"
+                decoding="auto"
                 fetchpriority="auto"
                 fill=""
                 loading="lazy"
                 ng-img="true"
                 ngsrc="icons/demo-shop.png"
-                sizes="100vw"
+                sizes="auto, 100vw"
                 src="icons/demo-shop.png"
                 style="position: absolute; width: 100%; height: 100%; inset: 0;"
               />
@@ -267,12 +268,13 @@ exports[`NavigationComponent snapshots should match snapshot with mobile menu op
               <img
                 alt="Demo shop logo"
                 class="object-contain"
+                decoding="auto"
                 fetchpriority="auto"
                 fill=""
                 loading="lazy"
                 ng-img="true"
                 ngsrc="icons/demo-shop.png"
-                sizes="100vw"
+                sizes="auto, 100vw"
                 src="icons/demo-shop.png"
                 style="position: absolute; width: 100%; height: 100%; inset: 0;"
               />
