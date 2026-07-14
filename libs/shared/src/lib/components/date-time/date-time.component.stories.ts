@@ -1,7 +1,6 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
 import { DateTimeComponent } from './date-time.component';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 import { CommonModule } from '@angular/common';
 import { importProvidersFrom } from '@angular/core';
 
@@ -32,7 +31,7 @@ type Story = StoryObj<DateTimeComponent>;
 export const WithISOString: Story = {
   args: {
     dateTime: '2025-03-16T12:00:00Z',
-    pattern: 'MMM dd, YYYY',
+    pattern: 'MMM dd, yyyy',
     timezone: 'UTC',
   },
   play: async ({ canvasElement, args }) => {
@@ -49,7 +48,7 @@ export const WithISOString: Story = {
 export const WithDate: Story = {
   args: {
     dateTime: new Date('2025-03-16T12:00:00'),
-    pattern: 'MMM dd, YYYY',
+    pattern: 'MMM dd, yyyy',
     timezone: 'UTC',
   },
   argTypes: {

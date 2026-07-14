@@ -8,8 +8,7 @@ import { CartComponent } from './cart.component';
 import { CartFacade } from '../../cart.facade';
 import { CartItemsComponent } from '../shared/cart-items/cart-items.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 import { mockCartItems } from '../../+mock/mock-cart-items';
 
 const mockCartFacade = (items: CartItemResponse[]) => ({

@@ -6,8 +6,7 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ProductFacade } from '../../product.facade';
 import { ProductResponse } from '@demo-shop/api';
 import { CartFacade } from '@demo-shop/cart';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 import { provideImageLoader } from '@demo-shop/shared';
 import { mockProducts } from '../../+mock/mock-products';
 

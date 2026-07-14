@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { importProvidersFrom } from '@angular/core';
 import { OrderStatusComponent } from './order-status.component';
 import { OrderStatus } from '@demo-shop/api';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, within } from 'storybook/test';
 
 const meta: Meta<OrderStatusComponent> = {
   component: OrderStatusComponent,
