@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [0.3.70](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.69...v0.3.70) (2026-07-15)
+
+
+### Features
+
+* **compose:** gate dev services on healthchecks, drop dead nx env ([#94](https://github.com/christian-wandling/demo-shop-angular-nestjs/issues/94)) ([8b9d3aa](https://github.com/christian-wandling/demo-shop-angular-nestjs/commit/8b9d3aac8e94e094f8fe0a0a8370a38500073e37))
+
 ### [0.3.69](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.68...v0.3.69) (2026-07-14)
 
 ### [0.3.68](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.67...v0.3.68) (2026-07-14)
