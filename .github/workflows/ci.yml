@@ -61,7 +61,6 @@ jobs:
       POSTGRES_USER: demo_shop
       POSTGRES_PASSWORD: demo_shop
       POSTGRES_DB: demo_shop
-      API_PORT: 3000
 
     steps:
       - uses: actions/checkout@v4
@@ -78,17 +77,12 @@ jobs:
       - name: Seed the database
         run: docker compose exec -T -e SEED_TARGETS=products api npx prisma db seed
 
-      - name: Assert the products endpoint serves seeded data
-        run: |
-          for _ in $(seq 1 60); do
-            if curl -fsS "http://localhost:${API_PORT}/api/v1/products" | jq -e '.items | length > 0' >/dev/null; then
-              exit 0
-            fi
-            sleep 5
-          done
-          echo 'the products endpoint never served seeded data'
-          docker compose logs api
-          exit 1
+      - name: Run the smoke test
+        run: docker compose exec -T api npx nx run backend:smoke
+
+      - name: Dump api logs on failure
+        if: failure()
+        run: docker compose logs api
 
       - name: Tear down
         if: always()

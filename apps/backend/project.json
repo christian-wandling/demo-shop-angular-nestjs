@@ -31,6 +31,13 @@
       "options": {
         "jestConfig": "apps/backend/jest.config.ts"
       }
+    },
+    "smoke": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/backend/jest.smoke.config.ts",
+        "passWithNoTests": false
+      }
     }
   }
 }
