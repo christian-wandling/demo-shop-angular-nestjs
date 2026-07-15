@@ -81,8 +81,7 @@ jobs:
       - name: Assert the products endpoint serves seeded data
         run: |
           for _ in $(seq 1 60); do
-            if curl -fsS "http://localhost:${API_PORT}/api/v1/products" -o products.json \
-              && node .github/scripts/assert-products.mjs products.json; then
+            if curl -fsS "http://localhost:${API_PORT}/api/v1/products" | jq -e '.items | length > 0' >/dev/null; then
               exit 0
             fi
             sleep 5
