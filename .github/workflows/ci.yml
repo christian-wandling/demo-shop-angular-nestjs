@@ -61,10 +61,6 @@ jobs:
       POSTGRES_USER: demo_shop
       POSTGRES_PASSWORD: demo_shop
       POSTGRES_DB: demo_shop
-      DB_PORT: 5432
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-      KEYCLOAK_PORT: 8080
       API_PORT: 3000
 
     steps:
@@ -74,31 +70,7 @@ jobs:
         run: docker network create shared
 
       - name: Boot the stack
-        run: docker compose up -d --build db keycloak api
-
-      - name: Wait for the database
-        run: |
-          for _ in $(seq 1 30); do
-            if docker compose exec -T db psql -U "${POSTGRES_USER}" -d "${POSTGRES_DB}" -c 'SELECT 1' >/dev/null 2>&1; then
-              exit 0
-            fi
-            sleep 2
-          done
-          echo 'the database never accepted a query'
-          docker compose logs db
-          exit 1
-
-      - name: Wait for keycloak
-        run: |
-          for _ in $(seq 1 60); do
-            if curl -fsS "http://localhost:${KEYCLOAK_PORT}/health/ready" >/dev/null 2>&1; then
-              exit 0
-            fi
-            sleep 5
-          done
-          echo 'keycloak never became ready'
-          docker compose logs keycloak
-          exit 1
+        run: docker compose up -d --wait --build db api
 
       - name: Apply migrations
         run: docker compose exec -T api npx prisma migrate deploy
