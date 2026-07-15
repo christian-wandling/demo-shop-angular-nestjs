@@ -18,7 +18,7 @@ services:
     ports:
       - '127.0.0.1:${DB_PORT:-5432}:5432'
     healthcheck:
-      test: ["CMD-SHELL", "psql -h 127.0.0.1 -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\" -c 'SELECT 1' || exit 1"]
+      test: ["CMD-SHELL", "PGPASSWORD=\"$$POSTGRES_PASSWORD\" psql -h 127.0.0.1 -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\" -c 'SELECT 1' || exit 1"]
       interval: 5s
       timeout: 10s
       retries: 10
