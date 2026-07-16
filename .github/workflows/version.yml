@@ -32,6 +32,7 @@ jobs:
         with:
           app-id: ${{ secrets.CW_DEPLOY_BOT_ID }}
           private-key: ${{ secrets.CW_DEPLOY_BOT_KEY }}
+          permission-contents: write
 
       - uses: actions/checkout@v7
         with:

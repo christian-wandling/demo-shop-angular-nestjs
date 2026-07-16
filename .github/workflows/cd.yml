@@ -37,11 +37,13 @@ jobs:
         with:
           app-id: ${{ secrets.CW_DEPLOY_BOT_ID }}
           private-key: ${{ secrets.CW_DEPLOY_BOT_KEY }}
+          permission-contents: read
 
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Build Docker image
         run: |
@@ -79,11 +81,13 @@ jobs:
         with:
           app-id: ${{ secrets.CW_DEPLOY_BOT_ID }}
           private-key: ${{ secrets.CW_DEPLOY_BOT_KEY }}
+          permission-contents: read
 
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Build Docker
         run: |
@@ -145,6 +149,8 @@ jobs:
         with:
           app-id: ${{ secrets.CW_DEPLOY_BOT_ID }}
           private-key: ${{ secrets.CW_DEPLOY_BOT_KEY }}
+          permission-contents: read
+          permission-deployments: write
 
       - name: Start Deployment
         id: start-deployment
@@ -160,6 +166,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@517a711dbcd0e402f90c77e7e2f81e849156e31d
@@ -236,11 +243,14 @@ jobs:
         with:
           app-id: ${{ secrets.CW_DEPLOY_BOT_ID }}
           private-key: ${{ secrets.CW_DEPLOY_BOT_KEY }}
+          permission-contents: read
+          permission-deployments: write
 
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Download artifacts
         uses: actions/download-artifact@v8
@@ -325,11 +335,13 @@ jobs:
         with:
           app-id: ${{ secrets.CW_DEPLOY_BOT_ID }}
           private-key: ${{ secrets.CW_DEPLOY_BOT_KEY }}
+          permission-contents: read
 
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Download artifact
         uses: actions/download-artifact@v8
