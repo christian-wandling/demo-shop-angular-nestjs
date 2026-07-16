@@ -1,4 +1,4 @@
-import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
+import { applicationConfig, Meta, StoryObj } from '@storybook/angular-vite';
 import { DateTimeComponent } from './date-time.component';
 import { expect, within } from 'storybook/test';
 import { CommonModule } from '@angular/common';

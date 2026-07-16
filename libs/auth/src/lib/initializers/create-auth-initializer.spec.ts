@@ -2,9 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { createAuthInitializer } from './create-auth-initializer';
 import { KeycloakService } from '../services/keycloak.service';
 
-declare const window: any;
-Object.defineProperty(window, 'location', { value: { search: undefined, hash: undefined } });
-
 describe('Create auth initializer', () => {
   let keycloakService: KeycloakService;
 

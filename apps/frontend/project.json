@@ -97,7 +97,7 @@
       }
     },
     "storybook": {
-      "executor": "@storybook/angular:start-storybook",
+      "executor": "@storybook/angular-vite:start-storybook",
       "options": {
         "port": 4400,
         "configDir": "apps/frontend/.storybook",
@@ -113,7 +113,7 @@
       }
     },
     "build-storybook": {
-      "executor": "@storybook/angular:build-storybook",
+      "executor": "@storybook/angular-vite:build-storybook",
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/docs/storybook",

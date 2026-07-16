@@ -1,4 +1,4 @@
-import { applicationConfig, Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { applicationConfig, Meta, moduleMetadata, StoryObj } from '@storybook/angular-vite';
 import { CommonModule } from '@angular/common';
 import { signal } from '@angular/core';
 import { CartFacade } from '../../cart.facade';

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ProductDetailComponent should match the snapshot 1`] = `
 <lib-product-detail
@@ -27,7 +27,7 @@ exports[`ProductDetailComponent should match the snapshot 1`] = `
           sizes="auto, 100vw"
           src="uri"
           srcset="uri 640w, uri 750w, uri 828w, uri 1080w, uri 1200w, uri 1920w, uri 2048w, uri 3840w"
-          style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(uri); filter: blur(15px);"
+          style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url("uri"); filter: blur(15px);"
         />
       </div>
     </div>
@@ -104,7 +104,7 @@ DebugElement {
           sizes="auto, 100vw"
           src="uri"
           srcset="uri 640w, uri 750w, uri 828w, uri 1080w, uri 1200w, uri 1920w, uri 2048w, uri 3840w"
-          style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(uri); filter: blur(15px);"
+          style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url("uri"); filter: blur(15px);"
         />
       </div>
     </div>

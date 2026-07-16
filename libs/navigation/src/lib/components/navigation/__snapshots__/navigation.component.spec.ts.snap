@@ -1,9 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`NavigationComponent snapshots should match snapshot with default state 1`] = `
 <div
   class="bg-white top-0 z-40 sticky"
-  id="root4"
 >
   
   <header
@@ -127,7 +126,6 @@ exports[`NavigationComponent snapshots should match snapshot with default state 
 exports[`NavigationComponent snapshots should match snapshot with mobile menu open 1`] = `
 <div
   class="bg-white top-0 z-40 sticky"
-  id="root5"
 >
   <dialog
     aria-modal="true"
