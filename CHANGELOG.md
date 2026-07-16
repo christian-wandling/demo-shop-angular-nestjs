@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [0.3.72](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.71...v0.3.72) (2026-07-16)
+
+
+### Bug Fixes
+
+* **frontend:** patch-bump angular to 21.2.18 for 9 security alerts ([#113](https://github.com/christian-wandling/demo-shop-angular-nestjs/issues/113)) ([120ef30](https://github.com/christian-wandling/demo-shop-angular-nestjs/commit/120ef30afc15f94da438c7000c134b81bb635987))
+
 ### [0.3.71](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.70...v0.3.71) (2026-07-16)
 
 
