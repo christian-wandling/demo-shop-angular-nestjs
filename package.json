@@ -160,5 +160,8 @@
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
     "*.(ts|tsx|js|jsx|html)": "node ./node_modules/eslint/bin/eslint.js --fix --ignore-pattern **.spec.* --ignore-pattern **/*-e2e/**"
+  },
+  "overrides": {
+    "basic-ftp": "^5.2.2"
   }
 }
