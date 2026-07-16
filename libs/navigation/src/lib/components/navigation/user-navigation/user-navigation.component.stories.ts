@@ -1,4 +1,4 @@
-import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
+import { applicationConfig, Meta, StoryObj } from '@storybook/angular-vite';
 import { CommonModule } from '@angular/common';
 import { importProvidersFrom, signal } from '@angular/core';
 import { UserResponse } from '@demo-shop/api';

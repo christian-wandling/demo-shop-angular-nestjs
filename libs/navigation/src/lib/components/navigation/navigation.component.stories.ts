@@ -1,4 +1,4 @@
-import { applicationConfig, Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { applicationConfig, Meta, moduleMetadata, StoryObj } from '@storybook/angular-vite';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { provideRouter } from '@angular/router';
 import { CartFacade, CartIconComponent } from '@demo-shop/cart';

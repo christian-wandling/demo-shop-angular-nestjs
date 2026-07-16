@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`CheckoutComponent should match the snapshot 1`] = `
 <lib-checkout
@@ -367,7 +367,7 @@ exports[`CheckoutComponent should match the snapshot 1`] = `
                 sizes="auto, 100vw"
                 src="productThumbnail"
                 srcset="productThumbnail 640w, productThumbnail 750w, productThumbnail 828w, productThumbnail 1080w, productThumbnail 1200w, productThumbnail 1920w, productThumbnail 2048w, productThumbnail 3840w"
-                style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(productThumbnail); filter: blur(15px);"
+                style="position: absolute; width: 100%; height: 100%; inset: 0; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url("productThumbnail"); filter: blur(15px);"
                 title="productName"
               />
             </div>

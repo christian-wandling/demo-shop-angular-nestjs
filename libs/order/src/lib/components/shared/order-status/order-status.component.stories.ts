@@ -1,4 +1,4 @@
-import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
+import { applicationConfig, Meta, StoryObj } from '@storybook/angular-vite';
 import { CommonModule } from '@angular/common';
 import { importProvidersFrom } from '@angular/core';
 import { OrderStatusComponent } from './order-status.component';

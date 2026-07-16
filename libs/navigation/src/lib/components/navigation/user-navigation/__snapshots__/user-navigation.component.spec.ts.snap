@@ -1,9 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`UserNavigationComponent snapshots should match snapshot with default state 1`] = `
-<div
-  id="root4"
->
+<div>
   <a
     class="block -m-2 lg:m-0 p-2 lg:p-0 font-medium text-xl lg:text-sm text-gray-400"
     data-testid="user-navigation-name"
