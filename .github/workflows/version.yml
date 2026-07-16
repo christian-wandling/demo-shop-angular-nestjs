@@ -27,18 +27,19 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/create-github-app-token@v1
+      - uses: actions/create-github-app-token@v3
         id: app-token
         with:
           app-id: ${{ secrets.CW_DEPLOY_BOT_ID }}
           private-key: ${{ secrets.CW_DEPLOY_BOT_KEY }}
+          permission-contents: write
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
 
@@ -74,7 +75,14 @@ jobs:
         run: |
           touch CHANGELOG.md
           npx standard-version --infile CHANGELOG.md --commit-all
-          git push --follow-tags origin main
+
+      - name: Push version
+        if: ${{ !inputs.dry_run && steps.check-version.outputs.skip != 'true' }}
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push --follow-tags origin main
 
       - name: Dry run
         if: ${{ inputs.dry_run }}
