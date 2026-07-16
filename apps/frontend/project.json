@@ -104,7 +104,7 @@
         "browserTarget": "frontend:build",
         "compodoc": true,
         "compodocArgs": ["-e", "json", "-d", "dist/storybook-helper"],
-        "styles": ["apps/frontend/src/styles.scss"]
+        "styles": ["./src/styles.scss"]
       },
       "configurations": {
         "ci": {
@@ -121,7 +121,7 @@
         "browserTarget": "frontend:build",
         "compodoc": true,
         "compodocArgs": ["-e", "json", "-d", "dist/storybook-helper"],
-        "styles": ["apps/frontend/src/styles.scss"]
+        "styles": ["./src/styles.scss"]
       },
       "configurations": {
         "ci": {

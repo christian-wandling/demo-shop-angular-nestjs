@@ -1,6 +1,9 @@
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
 import type { StorybookConfig } from '@storybook/angular-vite';
+
+const workspaceRoot = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 
 const config: StorybookConfig = {
   stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))', '../../../libs/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
@@ -14,6 +17,16 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['../public'],
+  viteFinal: async viteConfig => {
+    const { mergeConfig } = await import('vite');
+    const tsPaths: Record<string, string[]> = JSON.parse(
+      readFileSync(join(workspaceRoot, 'tsconfig.base.json'), 'utf-8')
+    ).compilerOptions.paths;
+    const alias = Object.fromEntries(
+      Object.entries(tsPaths).map(([name, [target]]) => [name, join(workspaceRoot, target)])
+    );
+    return mergeConfig(viteConfig, { resolve: { alias } });
+  },
 };
 
 export default config;

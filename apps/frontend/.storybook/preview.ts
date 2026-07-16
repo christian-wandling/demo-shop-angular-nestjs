@@ -2,7 +2,7 @@ import 'zone.js';
 import { Preview } from '@storybook/angular-vite';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import * as docJson from 'dist/storybook-helper/documentation.json';
+import * as docJson from '../../../documentation.json';
 
 setCompodocJson(docJson);
 
