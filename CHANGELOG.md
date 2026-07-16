@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [0.3.71](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.70...v0.3.71) (2026-07-16)
+
+
+### Bug Fixes
+
+* **shared:** override basic-ftp to ^5.2.2 to clear path-traversal alerts ([#95](https://github.com/christian-wandling/demo-shop-angular-nestjs/issues/95)) ([4bdc8a5](https://github.com/christian-wandling/demo-shop-angular-nestjs/commit/4bdc8a5d6d16449ebefe639386ddf8b704a979de))
+
 ### [0.3.70](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.69...v0.3.70) (2026-07-15)
 
 
