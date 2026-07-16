@@ -6,7 +6,6 @@ const config: StorybookConfig = {
   stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))', '../../../libs/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
     getAbsolutePath('@storybook/addon-docs'),
-    getAbsolutePath('@storybook/addon-vitest'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-mcp'),
   ],
