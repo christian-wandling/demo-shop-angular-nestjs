@@ -13,3 +13,7 @@ Angular frontend and NestJS API in one Nx monorepo, with a Postgres + Keycloak s
 ## Testing instructions
 - `npm run test` runs `nx run-many -t test`; `npm run lint` runs `nx run-many -t lint`.
 - Fix any failing test, type, or lint error before committing.
+
+## PR instructions
+- Commit format: `type(scope): subject` — lowercase, ≤72 chars, scope is an Nx project name or omitted.
+- Run `npm run lint` and `npm run test` green before pushing.
