@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [0.3.74](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.73...v0.3.74) (2026-07-18)
+
+
+### Bug Fixes
+
+* **frontend:** bump jspdf to 4.2.1 for two critical CVEs ([#116](https://github.com/christian-wandling/demo-shop-angular-nestjs/issues/116)) ([706aef9](https://github.com/christian-wandling/demo-shop-angular-nestjs/commit/706aef9b1382074881f71c40bdbb1a45d6c289cb))
+
 ### [0.3.73](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.72...v0.3.73) (2026-07-17)
 
 ### [0.3.72](https://github.com/christian-wandling/demo-shop-angular-nestjs/compare/v0.3.71...v0.3.72) (2026-07-16)
