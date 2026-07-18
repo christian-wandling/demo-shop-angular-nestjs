@@ -1,7 +1,7 @@
 import { Controller, Param, ParseIntPipe } from '@nestjs/common';
 import { ProductService } from '../services/product.service';
 import { ProductResponse } from '../dtos/product-response';
-import { Public } from 'nest-keycloak-connect';
+import { Public } from '../../common/decorators/public.decorator';
 import { CustomGet } from '../../common/decorators/custom-get.decorator';
 import { ProductListResponse } from '../dtos/product-list-response';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
