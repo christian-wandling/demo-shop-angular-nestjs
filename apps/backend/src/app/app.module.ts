@@ -7,23 +7,22 @@ import { CommonModule } from './common/common.module';
 import { ShoppingSessionModule } from './shopping-session/shopping-session.module';
 import { CartItemModule } from './cart-item/cart-item.module';
 import { JwtModule } from '@nestjs/jwt';
-import {
-  AuthGuard,
-  KeycloakConnectModule,
-  PolicyEnforcementMode,
-  RoleGuard,
-  TokenValidation,
-} from 'nest-keycloak-connect';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
+import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
+import { RolesGuard } from './common/guards/roles.guard';
+import { toPublicKeyPem } from './common/util/keycloak-public-key';
 
 @Module({
   imports: [
     SentryModule.forRoot(),
     ConfigModule.forRoot(),
-    JwtModule.register({
+    JwtModule.registerAsync({
       global: true,
+      useFactory: () => ({
+        publicKey: toPublicKeyPem(process.env.KEYCLOAK_REALM_PUBLIC_KEY),
+      }),
     }),
     ThrottlerModule.forRoot([
       process.env.NODE_ENV === 'production'
@@ -36,16 +35,6 @@ import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
             limit: 1000 * 1000,
           },
     ]),
-    KeycloakConnectModule.register({
-      authServerUrl: process.env.KEYCLOAK_URL,
-      realm: process.env.KEYCLOAK_REALM,
-      clientId: process.env.KEYCLOAK_CLIENT_API,
-      secret: '',
-      tokenValidation: TokenValidation.OFFLINE,
-      policyEnforcement: PolicyEnforcementMode.PERMISSIVE,
-      realmPublicKey: process.env.KEYCLOAK_REALM_PUBLIC_KEY,
-      bearerOnly: true,
-    }),
     CommonModule,
     ProductModule,
     UserModule,
@@ -60,11 +49,11 @@ import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
     },
     {
       provide: APP_GUARD,
-      useClass: AuthGuard,
+      useClass: JwtAuthGuard,
     },
     {
       provide: APP_GUARD,
-      useClass: RoleGuard,
+      useClass: RolesGuard,
     },
     {
       provide: APP_GUARD,
