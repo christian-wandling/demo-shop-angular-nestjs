@@ -10,6 +10,7 @@ node_modules
 
 # agent worktrees and local agent config (bind-mounted into the dev containers)
 .claude/
+.worktrees/
 
 # IDEs and editors
 /.idea
