@@ -23,26 +23,36 @@ updates:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: '@angular/*'
+        versions: ['>= 22.0.0']
       - dependency-name: '@angular-devkit/*'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: '@angular-devkit/*'
+        versions: ['>= 22.0.0']
       - dependency-name: '@schematics/angular'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: '@schematics/angular'
+        versions: ['>= 22.0.0']
       - dependency-name: 'jest-preset-angular'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: 'jest-preset-angular'
+        versions: ['>= 17.0.0']
       - dependency-name: '@nestjs/*'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: '@nestjs/*'
+        versions: ['>= 11.0.0']
       - dependency-name: '@nrwl/*'
         update-types:
           - 'version-update:semver-major'
@@ -53,31 +63,43 @@ updates:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: 'nx'
+        versions: ['>= 23.0.0']
       - dependency-name: '@nx/*'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: '@nx/*'
+        versions: ['>= 23.0.0']
       - dependency-name: 'rxjs'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: 'rxjs'
+        versions: ['>= 8.0.0']
       - dependency-name: 'zone.js'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: 'zone.js'
+        versions: ['>= 0.17.0']
       - dependency-name: 'typescript'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: 'typescript'
+        versions: ['>= 6.0.0']
       - dependency-name: '@types/node'
         update-types:
           - 'version-update:semver-major'
           - 'version-update:semver-minor'
           - 'version-update:semver-patch'
+      - dependency-name: '@types/node'
+        versions: ['>= 23.0.0']
     groups:
       dependencies:
         patterns:
