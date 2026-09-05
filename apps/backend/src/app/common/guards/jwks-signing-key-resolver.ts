@@ -10,6 +10,7 @@ export const createJwksSigningKeyResolver = (jwksUri: string): SigningKeyPemReso
     cacheMaxAge: 10 * 60 * 1000,
     rateLimit: true,
     jwksRequestsPerMinute: 10,
+    timeout: 3000,
   });
 
   return async (kid: string | undefined): Promise<string> => (await client.getSigningKey(kid)).getPublicKey();
