@@ -133,21 +133,7 @@ npm run prisma:generate
 npm run prisma:push
 ```
 
-7. Give the api keycloak's public key
-
-Access the keycloak server, click on the Public Key of RS256, and use its value in your `.env` file as `KEYCLOAK_REALM_PUBLIC_KEY`.
-
-```
-http://localhost:8080/admin/master/console/#/demo_shop/realm-settings/keys
-```
-
-Then recreate the api so it picks up the new value.
-
-```
-docker compose up -d api
-```
-
-8. Access the application
+7. Access the application
 
 ```
 Frontend: http://localhost:4200
@@ -192,7 +178,6 @@ An equivalent frontend built with React is available in the following repository
 > <a href="https://github.com/christian-wandling/demo-shop-react-ui" target="_blank">github.com/christian-wandling/demo-shop-react-ui</a>
 
 To use the React frontend with this API, ensure both applications are running and connected via the shared Docker network.
-
 
 ## User management
 
