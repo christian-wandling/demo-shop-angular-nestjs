@@ -1,6 +1,6 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiBearerAuth } from '@nestjs/swagger';
-import { Roles } from 'nest-keycloak-connect';
+import { Roles } from './roles.decorator';
 
 /**
  * Custom decorator that combines role-based authorization and Swagger documentation

@@ -7,16 +7,19 @@ import { CommonModule } from './common/common.module';
 import { ShoppingSessionModule } from './shopping-session/shopping-session.module';
 import { CartItemModule } from './cart-item/cart-item.module';
 import { JwtModule } from '@nestjs/jwt';
-import {
-  AuthGuard,
-  KeycloakConnectModule,
-  PolicyEnforcementMode,
-  RoleGuard,
-  TokenValidation,
-} from 'nest-keycloak-connect';
-import { APP_FILTER, APP_GUARD } from '@nestjs/core';
+import { APP_FILTER, APP_GUARD, Reflector } from '@nestjs/core';
+import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
+import { RolesGuard } from './common/guards/roles.guard';
+import { createJwksSigningKeyResolver } from './common/guards/jwks-signing-key-resolver';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
+
+const issuerUrl = (): string => `${process.env.KEYCLOAK_URL}/realms/${process.env.KEYCLOAK_REALM}`;
+
+const jwksUri = (): string =>
+  `${process.env.KEYCLOAK_INTERNAL_URL ?? process.env.KEYCLOAK_URL}/realms/${
+    process.env.KEYCLOAK_REALM
+  }/protocol/openid-connect/certs`;
 
 @Module({
   imports: [
@@ -36,16 +39,6 @@ import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
             limit: 1000 * 1000,
           },
     ]),
-    KeycloakConnectModule.register({
-      authServerUrl: process.env.KEYCLOAK_URL,
-      realm: process.env.KEYCLOAK_REALM,
-      clientId: process.env.KEYCLOAK_CLIENT_API,
-      secret: '',
-      tokenValidation: TokenValidation.OFFLINE,
-      policyEnforcement: PolicyEnforcementMode.PERMISSIVE,
-      realmPublicKey: process.env.KEYCLOAK_REALM_PUBLIC_KEY,
-      bearerOnly: true,
-    }),
     CommonModule,
     ProductModule,
     UserModule,
@@ -60,11 +53,14 @@ import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
     },
     {
       provide: APP_GUARD,
-      useClass: AuthGuard,
+      inject: [Reflector],
+      useFactory: (reflector: Reflector) =>
+        new JwtAuthGuard(reflector, createJwksSigningKeyResolver(jwksUri()), { issuer: issuerUrl() }),
     },
     {
       provide: APP_GUARD,
-      useClass: RoleGuard,
+      inject: [Reflector],
+      useFactory: (reflector: Reflector) => new RolesGuard(reflector, process.env.KEYCLOAK_CLIENT_API ?? ''),
     },
     {
       provide: APP_GUARD,
